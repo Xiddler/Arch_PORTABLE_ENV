@@ -1,0 +1,21 @@
+[user]
+	email = jamesdenismccarthy@gmail.com
+	name = Donagh
+[credential]
+	helper = cache
+[init]
+	defaultBranch = main
+	defaultBranc = main
+[safe]
+	; directory = /run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/MY_ZIM/Computer
+    directory = /run/media/donagh/USB128GB/DONAGHS/MY_ZIM/Computer
+	; directory = /mnt/cifs_share/RSYNCED/personal
+[core]
+	editor = vim
+[alias]
+	staash = stash --all
+	gsw = "git switch "
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate

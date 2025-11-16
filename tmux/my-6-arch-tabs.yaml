@@ -1,0 +1,43 @@
+session_name: my-6-arch-tabs
+windows:
+- layout: c7fe,183x37,0,0,1
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh
+  window_name: zsh
+- layout: c7ff,183x37,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh
+  window_name: zsh
+- layout: cec0,179x38,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh
+  window_name: doom
+- layout: c801,183x37,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh
+  window_name: journal
+- focus: 'true'
+  layout: c802,183x37,0,0,5
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh/PORTABLE_ENV
+  window_name: bpython
+- layout: c803,183x37,0,0,6
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh
+  window_name: copyparty

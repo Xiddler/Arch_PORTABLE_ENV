@@ -1,0 +1,63 @@
+;; based on https://github.com/jtroo/kanata/
+;; 2025-11-15
+
+#|
+This text between the two pipe+octothorpe sequences is a multi-line comment.
+Second line of text
+|#
+
+;; Text after double-semicolons are single-line comments.
+;; =================================================================================
+
+;; This file upgrades the left < key on my keyboard to a left alt 
+;; easier to use in vanilla emacs being on the same rows and
+;; handy for my application keyboard shortcuts like Alt B (Firefox) Alt Z (zim) etc.
+
+;; =================================================================================
+;; after making changes 
+;; Arch%> sudo systemctl restart kanata.service 
+;; and
+;; Arch%> sudo /home/donagh/.cargo/bin/kanata -c /home/donagh/.config/kanata/donagh.kbd
+
+
+(defcfg
+      process-unmapped-keys yes
+      log-layer-changes no
+)
+
+(defsrc
+  esc      i    p
+  caps d h j k l 
+  <    b   m
+)
+
+(defvar
+      tap-time 200
+      hold-time 200
+)
+
+(defalias
+  capsesc (tap-hold $tap-time $hold-time caps lctrl)
+  escctrl (tap-hold $tap-time $hold-time esc lctrl)
+  altnew (tap-hold $tap-time $hold-time esc (layer-toggle donsie))
+)
+
+
+
+(deflayer base
+    @capsesc     _   _ 
+    @escctrl _ _ _ _ _
+    @altnew _ _
+)
+
+;; when I hold the `<` key (beside the `z` key) then h j k l will perform left down up right outside of vim 
+;; e.g. in emacs mini-buffer; in zim <-- basic vim motions in zim!
+
+(deflayer donsie
+    _            S-1    +
+    _  del left down up right
+    _  bspc   A-x
+)
+
+
+

@@ -1,0 +1,23 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("home"
+ (filename . "~/")
+ (front-context-string . "00_Arch_Chrome\n ")
+ (rear-context-string . " 0 Jul 29 18:10 ")
+ (position . 172)
+ (last-modified 26900 64185 411772 695000))
+("init.el"
+ (filename . "~/.emacs.d/init.el")
+ (front-context-string . "e\n(unless (packa")
+ (rear-context-string . ")\n\n;; use-packag")
+ (position . 674)
+ (last-modified 26900 58922 822809 601000))
+("afile_emacs.md"
+ (filename . "~/afile_emacs.md")
+ (front-context-string . "[^1]This is a ne")
+ (rear-context-string)
+ (position . 1)
+ (last-modified 26900 58907 383153 174000))
+)

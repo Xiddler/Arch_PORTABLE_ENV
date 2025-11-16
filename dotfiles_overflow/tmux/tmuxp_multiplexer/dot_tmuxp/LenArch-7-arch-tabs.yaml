@@ -1,0 +1,50 @@
+session_name: LenArch-7-arch-tabs
+windows:
+- focus: 'true'
+  layout: b9fe,141x34,0,0,1
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmuxp_multiplexer/dot_tmuxp
+  window_name: zsh
+- layout: bdff,141x35,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmuxp_multiplexer/dot_tmuxp
+  window_name: zsh
+- layout: be00,141x35,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: sudo
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmuxp_multiplexer/dot_tmuxp
+  window_name: bash
+- layout: be01,141x35,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmuxp_multiplexer/dot_tmuxp
+  window_name: WINDOWS
+- layout: be02,141x35,0,0,5
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmuxp_multiplexer/dot_tmuxp
+  window_name: RPi
+- layout: be03,141x35,0,0,6
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmuxp_multiplexer/dot_tmuxp
+  window_name: copyparty
+- layout: be04,141x35,0,0,7
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: sudo
+  start_directory: /home/donagh/PORTABLE_ENV/dotfiles_overflow/tmux/tmuxp_multiplexer/dot_tmuxp
+  window_name: kanata

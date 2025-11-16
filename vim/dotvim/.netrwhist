@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/donagh/.config/autostart'
+let g:netrw_dirhist_0='/home/donagh/.directory_history'
+let g:netrw_dirhist_9='/home/donagh/TESTING'
+let g:netrw_dirhist_8='/etc/ssh/sshd_config.d'
+let g:netrw_dirhist_7='/etc'
+let g:netrw_dirhist_6='/usr/lib/sddm'
+let g:netrw_dirhist_5='/home/donagh/.vim/syntax'
+let g:netrw_dirhist_4='/home/donagh/.vim/spell'
+let g:netrw_dirhist_3='/home/donagh/.vim/plugins'
+let g:netrw_dirhist_2='/home/donagh/.vim/HELP/pack/nightsense/start/stellarized/colors'

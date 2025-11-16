@@ -1,0 +1,63 @@
+session_name: LenArch-7-arch-tabs
+
+windows:
+
+  - window_name: zsh
+
+    panes:
+
+      - 
+
+  - window_name: zsh
+
+    panes:
+
+      -
+
+
+
+  - window_name: bash
+
+    panes:
+
+      - shell_command: # pane no. 1
+
+          - mycont
+
+
+
+  - window_name: WINDOWS
+
+    panes:
+
+      - shell_command 
+
+          - echo "ssh -i /home/donagh/.ssh/id_Win11 donagh@192.168.1.49"
+
+  - window_name: RPi
+
+    panes:
+
+      - shell_command:
+
+          - echo "ssh -i /home/donagh/.ssh/id_RPi donagh@192.168.1.24"
+
+
+  - window_name: copyparty
+
+    panes:
+
+      - shell_command: 
+
+          - copyparty -ed
+
+  - window_name: kanata
+
+    panes:
+
+      - shell_command: 
+
+          - sudo -S <<< 1234 modprobe uinput && sudo /home/donagh/.cargo/bin/kanata -c /home/donagh/.config/kanata/config.kbd
+
+
+

@@ -1,0 +1,20 @@
+[Custom Commands][net.local.dmenu_run.desktop]
+Exec=/usr/local/bin/dmenu_run
+Name=dmenu_run
+
+[Custom Commands][net.local.rofi-2.desktop]
+Exec=/usr/sbin/rofi -show drun
+Name=rofi_drun
+
+[Custom Commands][net.local.rofi.desktop]
+Exec=/usr/sbin/rofi -show windowcd
+Name=rofi_cd
+
+[net.local.dmenu_run.desktop][Global Shortcuts]
+_launch=Alt+G
+
+[net.local.rofi-2.desktop][Global Shortcuts]
+_launch=Alt+D
+
+[net.local.rofi.desktop][Global Shortcuts]
+_launch=Alt+R
