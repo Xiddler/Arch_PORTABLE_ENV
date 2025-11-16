@@ -19,7 +19,6 @@ pacman -Ss <package name>
 
 # To update the local package base and upgrade all out of date packages
 sudo pacman -Suy
-sudo pacman -Syu
 
 # To install a package
 pacman -S <package name>
@@ -43,12 +42,7 @@ pacman -Ql <package name> | sed -n -e 's/.*\/bin\///p' | tail -n +2
 pacman -Qe
 
 # To list the top-most recent explicitly installed packages (not in the base groups)
-
-
-```
 expac --timefmt='%Y-%m-%d %T' '%l\t%n' $(comm -23 <(pacman -Qeq|sort) <(pacman -Qqg base base-devel|sort)) | sort -r | head -20
-
-```
 
 # To list orphan packages (installed as dependencies and not required anymore)
 pacman -Qdt

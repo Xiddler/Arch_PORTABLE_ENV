@@ -1,6 +1,6 @@
 # FRONTMATTER
 Opened 2025-07-23
-Filepath  /home/donagh/PORTABLE_ENV/dotfiles/cheat/.cheat/ISA.md
+Filepath  /home/donagh/PORTABLE_ENV/dotfiles/cheat/.cheat/arch_comps
 
 
 # ISA Architecture for Computers

@@ -1,9 +1,4 @@
-# QUICKIES
-
-ensure that:
-sudo systemctl enable cronie.service && sudo systemctl start cronie.service
-
-
+Opened
 # set a shell
 SHELL=/bin/bash
 
@@ -66,11 +61,8 @@ example
 @annually Same as @yearly
 
 # EXAMPLES
-every 15 min
+# every 15 min
 */15 * * * * /home/user/command.sh
-
-every minute
-*/1 * * * * /home/user/command.sh
 
 # every hour
 0 * * * * /home/donagh/.scripts/

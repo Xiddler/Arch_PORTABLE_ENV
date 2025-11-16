@@ -1,5 +1,6 @@
 #  For use of tramp on doom emacs on Windows
 # [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+# source ~/.zshrc
 
 #  XDG Base Directory Specification
 XDG_CONFIG_HOME="/home/donagh/.config"
@@ -9,21 +10,12 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 
 # Go straight to tmux -- but from 2024-09-13 see tmuxp config at $HOME/.tmuxp/mydailysession.yaml
 
-# ensure keybindings in .xbindkyesrc are "alive"
-xbindkeys
-
-# disable touchpad -- 2025-10-02
-# a=$(xinput list G Syna | cut -d'=' -f 2 | cut -d'[' -f 1)
-# xinput disable $a
-# did not work. Is the format or type of $a correct?
-
-
 # tmux attach-session -t tdaily-0
 # tmux attach-session -t mydailysessions
 
 # tmuxp load /home/donagh/.tmuxp/my-6-daily-tabs.yaml
-# tmuxp load /home/donagh/.tmuxp/mydaily6tabsession.yaml
-# tmux attach-session -t my-6-daily-tabs
+# 2025-07-23 — seems I need to source this file after ssh-ing from Windows Powershell; that usen't be the case;
+tmux attach-session -t my-6-daily-tabs
 
 
 ######################################
@@ -54,7 +46,6 @@ xbindkeys
 #####################################################
 # Dropbox on Toshiba - to ensure dropbod runs after a reboot
 # echo "Did you just reboot? Check dropboxd is running... ->% PS drobboxd OR ->% psd "
-# echo " \n
 # Dropbox
 # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
 # and
@@ -81,18 +72,59 @@ xbindkeys
 
 # NOTE: Aliases handled in .zsh_aliases or .bash_aliases
 
-# NOTE: see ~/.zshenv
 # issue with locale - added 2022-11-22
-LC_TIME=en_IE.UTF-8
 
-# locale
-export LANG=en_US.utf8
+
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TIME=en_IE.UTF-8
 export LC_CTYPE=en_US.UTF-8
+export LC_MESSAGES=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 
 # It will set red for bold and blue for underlined. 
 export LESS='-R --use-color -Dd+r$Du+b$'
+
+# FUNCTEST - reached limit of 500 on 2025-08-07
+# see .bashrc
+# set -o functrace
+# limit functest 1000
+
+# POWERLEVEL - START 
+# I have replaced this promt
+
+# see End of This File 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+
+# cf. WARNING at zim-wiki LINUX:1Linux Live USB:01installed apps:zsh shell:ISSUES
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+#
+# END POWERLEVEL section
+
 
 
 # the following was imported from the Manjaro .zshrc installed on Jan 14 2022
@@ -114,8 +146,10 @@ export LESS='-R --use-color -Dd+r$Du+b$'
 
 # show italics in vim comments etc.  -- see .vimrc for this
 # https://hobo.house/2017/07/17/using-italics-with-vim-in-your-terminal/
-export TERM=xterm-256color
+# export TERM=xterm-256color
+
 # export TERM=xterm-256color-italic
+
 # export TERM=xterm-256color-bold
 # vivid https://github.com/sharkdp/vivid/
 # export LS_COLORS="$(vivid generate molokai)"
@@ -124,8 +158,9 @@ export TERM=xterm-256color
 # export LS_COLORS="$(vivid generate zenburn)"
 # export LS_COLORS="$(vivid generate catppuccin-mocha)"
 
-# machine
+# show machine
 COMP=$(uname -a | cut -d' ' -f2)
+comp() { echo $COMP }
 
 
 # borg backup
@@ -143,33 +178,9 @@ MYVIMRC=$HOME/.vimrc
 # https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html#Prompt-Expansion
 # setopt PROMPT_PERCENT 
 
-#########################################################################################
-# HISTORY
-#########################################################################################
 # Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
-HISTFILE=$HOME/.zsh_history
-# set -g history-limit 9000 #
-setopt extendedhistory 
-setopt SHARE_HISTORY # uses same history for all sessions
+set -g history-limit 9000 #
 
-## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-SAVEHIST=1000
-HISTSIZE=99999 
-HISTFILESIZE=99999
-HISTCONTROL=ignoredups:ignorespace
-
-# per-directory-history
-# source $HOME/PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
-
-#############################
-#       zsh-history-substring-search
-#############################
-# https://github.com/zsh-users/zsh-history-substring-search
-# source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-# END_HISTORY
-#########################################################################################
-#
 # refer to https://betterdev.blog/minimal-safe-bash-script-template/
 # set -Eeou pipefail
 
@@ -178,6 +189,7 @@ HISTCONTROL=ignoredups:ignorespace
 # setxkbmap -option caps:caps
 #
 # time and date data added to zsh history
+setopt extendedhistory 
 
 
 
@@ -206,6 +218,13 @@ autoload copy-earlier-word
 # to edit the above file go to: $HOME/.oh-my-zsh/themes/crcandy_dm.zsh-themes
 ## ZSH_THEME="powerlevel9k/powerlevel9k"
 
+## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+#HISTSIZE=1000
+#SAVEHIST=1000
+# HISTFILE=$HOME/.zsh_history
+HISTFILE=$HOME/.zhistory
+HISTSIZE=99999 
+HISTFILESIZE=99999
 
 ## Use modern completion system
 #autoload -Uz compinit
@@ -278,8 +297,9 @@ plugins=(
 # the following is a workaround to solve a problem with not going to vi-cmd-mode on "jk" on the CLI
 # this seems to have gotten resolved somehow...
 # Ans: zsh has bindings for vi on the CLI
-# https://github.com/zsh-users/zsh-autosuggestions/issues/126
-#
+
+
+
 # if [ -z "$_zsh_custom_scripts_loaded" ]; then
 #   _zsh_custom_scripts_loaded=1
 #   plugins+=(zsh-syntax-highlighting)
@@ -295,14 +315,11 @@ plugins=(
 
 # PATH="$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.emacs.d/bin/:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/opt/texlive/2020/bin/x86_64-linux/:/home/donagh/.emacs/bin:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2021/bin/x86_64-linux:/home/donagh/Applications/nushell/nu_0_60_0_linux/nushell-0.60.0:/home/donagh/.subuser/bin"
 # Is this a good idea to have PATH defined here? 
-# Manjaro
-# PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/.subuser/bin:/home/donagh/.local/bin/cheat:/usr/sbin/bash:/home/donagh/.config/emacs/bin:/home/donagh/Applications/lc/lc"
-# LenArch
-PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin::/home/donagh/.fzf/bin:/home/donagh/go/bin:/home/donagh/.local/bin/cheat:/usr/sbin/bash:/home/donagh/Applications/XnView/XnView:/home/donagh/Applications/Mega_cloud/usr/bin:/home/donagh/Applications/Qt5/5.13.2/Src/qtbase/bin:/home/donagh/.cargo/bin"
+#
+PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/donagh/.fzf/bin:/home/donagh/Applications/Zotero/Zotero_linux-x86_64:/home/donagh/.vim/pack/SuperMan/start/vim-superman/bin:/home/donagh/.cargo/bin:/home/donagh/PORTABLE_ENV_tmp/:/home/donagh/go/bin:/home/donagh/Applications/shellmath/shellmath:/home/donagh/.mix:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/maps/OSI_GridInQuest/GridInQuestII-Lin64-0100:/run/media/donagh/01d4c077-4709-4b5b-9431-087bc9060d68/REPOSITORIES/2programming/golang/vugu_stuff:/home/donagh/.local/bin/gron:/usr/local/texlive/2022/bin/x86_64-linux:/home/donagh/.subuser/bin:/home/donagh/.local/bin/cheat:/usr/sbin/bash:/home/donagh/.config/emacs/bin:/home/donagh/Applications/lc/lc:/home/donagh/Applications/pa_password_manager/pa"
 
 
-
-
+CDPATH='.:/home/donagh/DONAGHS/:/home/donagh/DONAGHS/personal/:/home/donagh/REPOS/:/home/donagh/Arch_PORTABLE_ENV/:/home/donagh/.config/'
 
 # source /home/donagh/.local/bin/virtualenvwrapper.sh
 
@@ -328,8 +345,12 @@ PATH="/home/donagh/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:
 autoload -U zmv # meaning zsh mv command
 # You can then run zmv to rename files according to a pattern. Both the pattern and the replacement text need to be quoted so that they are passed-as is to the zmv function which will expand them in due course.
 # zmv '^*.*' '$f.md'
+#
 # autocompletion
+# this requires zhs-completions plugin to be installed
 autoload -U compinit; compinit
+autoload -U colors; colors
+
 # In bash to use the vi editor
 # set -o vi
 setopt VI # what is this? Sets the line editort to vi. Also works: bindkey -v 
@@ -337,6 +358,10 @@ setopt VI # what is this? Sets the line editort to vi. Also works: bindkey -v
 setopt autocd
 setopt autolist # e.g.in $HOME directory -> %ls /DoTAB ie follow ls /Do With  TAB
 setopt extendedglob # extended globbbing e.g. ls -d ^*.py excludes .py files
+setopt SHARE_HISTORY # uses same history for all sessions
+setopt HIST_IGNORE_SPACE # don't save in .zhistory if there's an initial space
+setopt HIST_IGNORE_DUPS
+setopt inc_append_history
 # only fools wouldn't do this ;-) 
 export EDITOR="vim"
 # export BROWSER="w3m"
@@ -435,6 +460,8 @@ export RANGER_LOAD_DEFAULT_RC=false
 #############################
 #        zoxide
 #############################
+# https://github.com/ajeetdsouza/zoxide
+
 # zoxide - for directory jumping using z 
 # 2024-05-11 - changed to make cd be 'z' instead 
 # eval "$(zoxide init --cmd cd zsh)"
@@ -445,9 +472,15 @@ eval "$(zoxide init zsh)"
 #############################
 #        mcfly
 #############################
+# https://github.com/cantino/mcfly
+
+
+# source /usr/share/doc/mcfly/mcfly.bash
+
 
 # mcfly - for history Ctrl-R
 # eval "$(mcfly init zsh)"
+# export MCFLY_KEY_SCHEME=vim
 
 # emacs - to get emacsclient to work
 # export ALTERNATE_EDITOR=""
@@ -458,8 +491,10 @@ eval "$(zoxide init zsh)"
 #############################
 #     fzf
 #############################
+# https://github.com/junegunn/fzf
 
 eval "$(fzf --zsh)"
+# source <(fzf --zsh) # does the same thing
 
 # fzf (disable this if using mcfly for Ctrl R)
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -468,17 +503,55 @@ eval "$(fzf --zsh)"
 # source ~/.fzf/shell/key-bindings.zsh
 # use fd instead of find
 # export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git' #  --hidden means show hidden files
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git" #  --hidden means show hidden files
+export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout=reverse --height=30% --preview='bat -p --color=always {} '"
+export FZF_CTRL_R_OPTS="--style minimal --color 16 --info inline --no-sort --no-preview"
+
+# mini menu
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+# extra
+#
+# export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+FZF_COLORS="bg+:-1,\
+fg:gray,\
+fg+:white,\
+border:black,\
+spinner:0,\
+hl:yellow,\
+header:blue,\
+info:green,\
+pointer:red,\
+marker:blue,\
+prompt:gray,\
+hl+:red"
+
+export FZF_DEFAULT_OPTS="--height 60% \
+--border sharp \
+--layout reverse \
+--color '$FZF_COLORS' \
+--prompt '∷ ' \
+--pointer ▶ \
+--marker ⇒"
+# export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
+export FZF_ALT_T_OPTS="--preview 'tree -C {} | head -n 10'"
+export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
+
+# export FZF_TMUX_OPTS="-p"
+
 
 #############################
 #    dirjump (or d)
 #############################
+# https://github.com/imambungo/dirjump
+
 # dirjump - use -> % d to see 10 most recent directories visited. https://github.com/imambungo/dirjump
 # the author says he no longer maintains this and uses zoxide instead. But I like it!
 # note I git cloned the full repo to $HOME/PORTABLE_ENV/dirjump/dirjump on 2024-06-25
 source ~/.config/dirjump/dirjump/dirjump
-# may need to symlink
-# ln -s $HOME/PORTABLE_ENV/dirjump/dirjump/dirjump ~/.config/dirjump/dirjump/dirjump
+# echo 'source ~/.config/dirjump/dirjump' >> ~/.zshrc
 
 
 #############################
@@ -497,17 +570,15 @@ source ~/.config/dirjump/dirjump/dirjump
 # yazi and then quitting, you end up in the dir that you had last navigated to in yazi
 #
 # Repo suggests using yy as alias for yazi.
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
+# function yy() {
+# 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+# 	yazi "$@" --cwd-file="$tmp"
+# 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+# 		cd -- "$cwd"
+# 	fi
+# 	rm -f -- "$tmp"
+# }
 
-
-# Use Ctrl G to toggle between local and global
 
 # tilix terminal (testing out June 2022) 
 # if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
@@ -516,7 +587,7 @@ function yy() {
  
 #########################################################
 #########################################################
-# Consider using some /all of the foloowing — added 2025-02-17
+# Consider using some /all of the following — added 2025-02-17
 
   # Ensure history is written after every command, allowing it to persist across sessions
    # shopt -s histappend  # Append to history instead of overwriting
@@ -531,6 +602,7 @@ function yy() {
    # HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
    # Ignore duplicate and space-prefixed commands
+# HISTCONTROL=ignoredups:ignorespace
 
    # Save multi-line commands as a single entry
    # shopt -s cmdhist
@@ -540,15 +612,29 @@ function yy() {
    # bind '"\e[B":history-search-forward'
 
 #########################################################
-#########################################################
 
 # sd  https://github.com/ianthehenry/sd 
 # fpath=(/home/donagh/Applications/sd_scripts_dir_utility/sd/sd $fpath)
 
+#########################################################
+#########################################################
+# 
+# DONAGHS PREFERENCES
+#
+#########################################################
+#########################################################
+
+#########################################################
 # Pure prompt
+#########################################################
 # initialize pure prompt (for use in WSL etc. - p10k being too complicated)
 # https://github.com/sindresorhus/pure 
-fpath+=(/home/donagh/PORTABLE_ENV/zsh/home_dot_zsh/pure)
+fpath+=(/home/donagh/Arch_PORTABLE_ENV/zsh/home_dot_zsh/pure)
+
+# echo $fpath
+# /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/functions/Calendar /usr/share/zsh/functions/Chpwd /usr/share/zsh/functions/Completion /usr/share/zsh/functions/Completion/Base /usr/share/zsh/functions/Completion/Linux /usr/share/zsh/functions/Completion/Unix /usr/share/zsh/functions/Completion/X /usr/share/zsh/functions/Completion/Zsh /usr/share/zsh/functions/Exceptions /usr/share/zsh/functions/MIME /usr/share/zsh/functions/Math /usr/share/zsh/functions/Misc /usr/share/zsh/functions/Newuser /usr/share/zsh/functions/Prompts /usr/share/zsh/functions/TCP /usr/share/zsh/functions/VCS_Info /usr/share/zsh/functions/VCS_Info/Backends /usr/share/zsh/functions/Zftp /usr/share/zsh/functions/Zle /home/donagh/PORTABLE_ENV/zsh/home_dot_zsh/pure /home/donagh/PORTABLE_ENV/zsh/home_dot_zsh/pure
+
+
 autoload -U promptinit; promptinit
 # PURE_PROMPT_SYMBOL="❯"
 prompt pure
@@ -556,25 +642,53 @@ prompt pure
 #fpath+=($HOME/.zsh/pure)
 # change the color for both `prompt:success` and `prompt:error`
 zstyle ':prompt:pure:prompt:*' color cyan
-#
-# zsh-abbr - allows TEXT expansion in the zsh (eg pas = pamac search) 
+
+# zstyle
+zstyle ':completion:*:' menu select # tab opens cmp menu
+
+#########################################################
+# zsh-abbr 
+#########################################################
+# allows TEXT expansion in the zsh (eg pas = pamac search) 
 # see zim-wiki and cheats --> zsh
 # and https://zsh-abbr.olets.dev/
-source $HOME/PORTABLE_ENV/zsh/zsh-abbr/zsh-abbr/zsh-abbr.zsh
-
-
-#  https://github.com/zsh-users/zsh-autosuggestions
-source $HOME/PORTABLE_ENV/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# see first line regarding zLINUX:1Linux Live USB:01installed apps:powerlevel10kprof 
-# zprof 
 #
-# call the zsh-syntax-highlighting plugin last thing in this file
+# source $HOME/Arch_PORTABLE_ENV/zsh/zsh-abbr/zsh-abbr.plugin.zsh
+
+# see /home/donagh/.config/zsh-abbr/user-abbreviations
+# usage ->% abbr "mqa"="my quick abbreviation"
+# ->% mqa<Enter>
+
+#########################################################
+# per-directory-history
+#########################################################
+
+# Use Ctrl G to toggle between local and global history
+source $HOME/Arch_PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
+# ->% echo $PER_DIRECTORY_HISTORY_TOGGLE --▷ ^G
+
+#########################################################
+# zsh-autosuggestions 
+#########################################################
+# suggests commands as you type based on history and completions
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# changed to the following on 2025-07-27 and it now works
+source ~/Arch_PORTABLE_ENV/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+# see a completion offered after the cursor in a muted gray color
+# git clone https://github.com/zsh-users/zsh-autosuggestions ~/PORTABLE_ENV/zsh
+# ln -s ~/PORTABLE_ENV/zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+# sudo pamac install zsh-autosuggestions [Installed -- 2025-07-07 ] 
+# https://github.com/zsh-users/zsh-autosuggestions/issues/126
+#########################################################
+# zsh-completions
+#########################################################
+# see auto-completions above ~ line 338
+
+#########################################################
+# zsh-syntax-highlighting plugin last thing in this file
+#########################################################
 # plugins=( zsh-syntax-highlighting )
-source $HOME/PORTABLE_ENV/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/Arch_PORTABLE_ENV/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 
 

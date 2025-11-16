@@ -1597,26 +1597,3 @@ Project home page: https://github.com/BurntSushi/ripgrep
         information, such as the presence of target specific optimizations and
         the git revision that this build of ripgrep was compiled from.
 
-# Exclude directory
-if you want to search for occurrences of `foo` but are not interested in anything in the bar/ folder, you can use
-
-rg foo -g '!bar/'
-
-# Include hidden files
-
-Looking for 'alt+v' in any files except in the folder 'MyContainer'
-
--> %  cd $HOME 
--> %  rg 'alt[+]v' --hidden -g "\!MyContainer/"
-
-Note: zsh requires escaping the `!` to make the -g flag work
-
-_Output_
-Notebooks/MY_ZIM/Computer/MAJORS/keyboard_stuff/xbindkeys/partial_dot_xbindkeysrc.txt
-34:  alt+v
-
-.xbindkeysrc
-67:  alt+v
-
-SUCCESS
-

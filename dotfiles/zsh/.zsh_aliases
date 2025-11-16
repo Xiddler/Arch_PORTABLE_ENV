@@ -1,4 +1,4 @@
-# LOCATION: ~/PORTABLE_ENV/dotfiles/zsh_rc/zsh_aliases
+# LOCATION: ~/Arch_PORTABLE_ENV/dotfiles/zsh_rc/zsh_aliases
 
 #{{{ NOTES
 ## In functions, remember the 'command' prefix "$@" if the "alias" has the same name as the command. 
@@ -15,9 +15,7 @@ alias -g PS='ps aux | grep -i '
 alias -g G='| grep -i '
 alias -g L='| less '
 alias -g W='| wc -l '
-# alias -g C='| xclip -selection clipboard'
-alias -g C='| xclip -i' # pipe stdin to clipboard
-alias -g P=' xclip -o ' # print clipboard to stdout
+alias -g C='| xclip -selection clipboard'
 # alias -g C='| clipcopy '
 #
 alias hg=histgrep
@@ -36,7 +34,7 @@ alias -g wett='curl wttr.in/limerick'
 alias -g def='~/.scripts/get_defs.sh ' # dictionary addition to $dict
 alias -g define='BROWSER=w3m ddgr \!wordnik ' # ddgr is CLI DDGo and w3m is CLI browser
 alias -g filepath='$HOME/.scripts/filename.sh'
-alias -g scrape='~/PORTABLE_ENV/scripts/scrape_website.sh'
+alias -g scrape='~/Arch_PORTABLE_ENV/scripts/scrape_website.sh'
 alias -g scryp='scryer-prolog '
 alias -g unum='/home/donagh/gApplications/UNUM/unum.pl'
 # alias -g pmj='/run/media/donagh/g01d4c077-4709-4b5b-9431-087bc9060d68/DONAGHS/personal/journal/2021/$(date +"%m")/$(date +"%m")-$(date +"%d").md' # see Autokey
@@ -91,8 +89,6 @@ lsch() { ls $HOME/.cheat }
 # issue with differences between files saved when using emacsclient and emacs -nw
 # USE emacs -nw
 
-emax() {  emacs -q -l ~/.emacs.d/init.el & }
-
 # Critical Thinking
 tnk() { vim ~/DONAGHS/personal/thinking_stuff/practising_critical_thinking.md }
 # hacks == hax
@@ -137,8 +133,7 @@ jargon() { vim /home/donagh/REPOS/WORDS/MY_WORDS/modern_jargon.md } # tech jargo
 terms() { vim ~/DONAGHS/personal/SELF_DEVELOPMENT/mental_stuff/terms.md } # mainly psychology terms
 hard() { vim $HOME/REPOS/WORDS/MY_WORDS/hard_words.txt }
 articles() { cd $HOME/REPOS/books/Articles/Articles_downloaded } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
-# books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
-books() { cd /mnt/samba_share/BOOKS }
+books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
 b_d() { cd $HOME/REPOS/books/ } # a collection of abbrs. for books; bd is books_directory; br is books_reading directory for notes; b2r is books to read;
 b_r() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls } # b is prefix for books so br = books reading, b2r = books to read, bd = books directory
 b_2r() {vim ~/REPOS/books/0READING/2Read.md } # books to read; see b_r and b_d above
@@ -151,8 +146,7 @@ thymo() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md }
 #bookmarks() { cd $HOME/SD64/1donaghs-stuff/0_All_Bookmarks/WebBrowser_Bookmarks }
 # rnotes() { cd $HOME/REPOS/books/0Reading/0Reading_notes && ls }
 alc() { cd  $personal/alcohol/ }
-# shared() { cd /home/donagh/samba/anonymous_shared_directory }
-samba() { cd /mnt/samba_share }
+anon() { cd /home/donagh/samba/anonymous_shared_directory }
 anon="/home/donagh/samba/anonymous_shared_directory"
 vig() { cd /run/media/donagh/SD64GB/DONAGHS/personal/writings/my_writings/VIGNETTES/ }
 # Search Zim - Computer, ORG 
@@ -173,7 +167,7 @@ alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 #{{{ doom emacs
 # alias -g der="doom run" # doom emacs run; 
 # alias -g drr="doom run"
-alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure7_2025_3_1.md"
+# alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure7_2025_3_1.md"
 
 #}}}
 #{{{ VIM 
@@ -182,8 +176,9 @@ alias -g sos="vim ~/DONAGHS/personal/SOS/Structure/structure7_2025_3_1.md"
 # alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
 alias -g bx='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
 alias -g sc='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
-# alias -g vt='vim ~/REPOS/TESTING/test.md'
-alias -g vt='vim ~/TESTING/testing_vim.txt'
+alias -g vt='vim ~/REPOS/TESTING/test.md'
+alias -g vtt='vim ~/TESTING/testing_vim.txt'
+alias -g ntt='nvim ~/TESTING/nvim_testing.txt'
 alias -g vima='vim ~/a.txt' # for temporary use eg implementing regex etc. NOTE: see configs/config.vim for autocmd setting to get this working
 alias -g music='vim $HOME/REPOS/music/music_memos.md'
 alias -g quakes='vim $HOME/DONAGHS/personal/mental_stuff/quakes.md'
@@ -207,38 +202,12 @@ wants() { vim $HOME/REPOS/Purchases/Wants/wants.md }
 vvim() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
 vimm() { vim -u /home/donagh/PORTABLE_ENV/vim/vimrc_files/minimal_vimrc $1 }
 
-
-
-
-
-
 #}}}
-#{{{ LITTLE TOOLS
-
-# make a throwaway scratch buffer
-scb() { vim $(mktemp) } 
-
-# make a throwaway scratch directory for messing
-scd() { cd $(mktemp -d) } 
-
-alias -g rg="rg -S" # use Smartcase
-
-# change case of string
-upper() { echo $1 | tr '[:lower:]' '[:upper:]' }
-lower() { echo $1 | tr '[:upper:]' '[:lower:]' }
-
-# copy the pwd to the clipboard
-cpwd() { pwd | xclip -i }
-# then in a different context
-ppwd() { xclip -o }
-
-# show time in the terminal
-# t() { echo $(date +"%H:%M") }
-t() { date +"%H:%M" && echo "\n" }
-# see Autokey instead
-
-bt() { bluetui }
-
+#{{{ NVIM
+nvim="nvim -u ~/PORTABLE_ENV/nvim/init.lua $1"
+vni() { nvim ~/.config/nvim/init.lua }
+# Like vv for .vimrc
+nn() { nvim ~/.config/nvim/init.lua }
 
 #}}}
 # {{{ MANJARO
@@ -347,8 +316,7 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 # PASSWORDS OUT 
 # LINUX - Toshiba
 # alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
-# passout() { rg -i "$1" $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
-passout() { rg -i -C 6 "$1" $HOME/Notebooks/MY_ZIM/Computer/11SignUps.txt }
+passout() { rg -i "$1" $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
 alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 # added 2022-03-20  using jq and 11SignUps.json
 pout() { jq '.passwords' $HOME/REPOS/11SignUps.json | rg -A4 $1 }
@@ -387,8 +355,7 @@ vur() {vim ~/DONAGHS/personal/5_Ur_Journal.md }
 # sends selected text to the above file  use ,j in vim to run it 
 send_hunk() { /home/donagh/.scripts/hunk_to_ur_journal.sh }
 
-# mj() { $HOME/.scripts/markdown_journal.sh } # edit / open today's journal - my journal 
-mj() { echo "Use Toshiba!" }
+mj() { $HOME/.scripts/markdown_journal.sh } # edit / open today's journal - my journal 
 mt() { vim ~/DONAGHS/personal/health_general/THYMO/thymo.md } # open thymo file 
 
 pers() { cd $HOME/DONAGHS/personal } # go to personal 
@@ -429,20 +396,14 @@ hme() { cd $HOME }
 # donagh-satellitep50c.home 2023-09-30
 
 # ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@192.168.1.86 } 
-ssht() { ssh -i /home/donagh/.ssh/id_to_Toshiba donagh@donagh-satellitep50c.home }
+# from Leonovo Arch
+ssht() { ssh -i /home/donagh/.ssh/id_to_toshiba donagh@donagh-satellitep50c.home }
 # ssh into the RPi
 # sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
 # sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
 # 2025-05-14 
 sshrpi() { ssh -i ~/.ssh/id_ed25519_RPi donagh@192.168.1.24 }
-
-sshwin() { ssh -i ~/.ssh/id_ed25_Win11 donagh@192.168.1.49 }
-
 # alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
-#}}}
-#{{{ Tmux & tmuxp
-tml() tmuxp load $HOME/.tmuxp/mydaily6tabsession.yaml
-#
 #}}}
 #{{{ DOTFILES
 # dot files shortcuts 
@@ -458,9 +419,9 @@ alias -g sza='source ~/.zsh_aliases'
 # edit file
 alias -g vb='vim ~/.bashrc'
 alias -g vv='vim ~/.vimrc'
-# edit and source simultaneously
-alias -g vz="vim ~/.zshrc && . ~/.zshrc"
-alias -g vza="vim ~/.zsh_aliases && . ~/.zsh_aliases"
+alias -g vrc='vim ~/.vimrc'
+alias -g vz="vim ~/.zshrc"
+alias -g vza="vim ~/.zsh_aliases"
 
 # vim config file
 alias -g vco="vim  $HOME/.vim/settings/configs/configs.vim" 
@@ -489,11 +450,10 @@ alias gll="git log --graph --abbrev-commit --decorate --date=relative --format=f
 alias glb="git for-each-ref --color=always --sort=-committerdate refs/heads refs/remotes --format='%(authordate:short) %(color:red)%(objectname:short) %(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) %(authorname)'"
 # cf ~/.scripts/manage_all_git_repos.sh (on the laptop)
 alias -g g_run="$HOME/.scripts/manage_all_git_repos.sh" # list state of 4 main repos
-alias -g g_poe="$HOME/PORTABLE_ENV/"             # On github
-g_zim() { cd $HOME/Notebooks/MY_ZIM }
-alias -g poe="$HOME/PORTABLE_ENV/"             # Quickie
-# alias -g g_org="$HOME/Dropbox/org-mode/org/"       # this tracks my .org files
-# alias -g g_pers="$HOME/DONAGHS/personal/"
+alias -g g_poe="$HOME/Arch_PORTABLE_ENV/"             # On github
+alias -g poe="$HOME/Arch_PORTABLE_ENV/"             # Quickie
+alias -g g_org="$HOME/Dropbox/org-mode/org/"       # this tracks my .org files
+alias -g g_pers="$HOME/DONAGHS/personal/"
 pers() { cd "$HOME/DONAGHS/personal/" && ls }
 alias -g g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only
 alias -g g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
@@ -506,7 +466,7 @@ alias -g b_jour="ls -last /home/donagh/BACKUPS/RSYNCED/personal/journal/2024/02"
 # echo -e "$mydir";
 # alias -g g_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
 alias -g g_list='$HOME/.scripts/list_all_git_repos.sh' # added 2023-11-07
-alias -g git_list='echo -e "~/PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
+alias -g git_list='echo -e "~/Arch_PORTABLE_ENV/ \n~/Dropbox/org-mode/org/ \n~/DONAGHS/personal/ \n~/DONAGHS/MY_ZIM/Computer \n~/DONAGHS/all_org/"'
 alias -g git_run='$HOME/.scripts/manage_all_git_repos.sh'
 alias -g git_all='$HOME/.scripts/git_run_all.sh'
 
@@ -518,6 +478,9 @@ lg() { lazygit }
 #}}}
 #{{{ LS
 # note eza is a dependency
+# alias -g ls="eza"
+# eza: Option --time (-t) has no "--color=always" setting (choices: modified, changed, accessed, created)
+
 # List directories / files. Code: f file, d directory, l symlink, i item (file/directory),  n non-.
 # Duplicate options are given where zsh is available / known to me
 alias -g latest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest on top (zsh) [o is for ordered, m is for modified]
@@ -526,10 +489,12 @@ alias -g newest='ls -lt  **/*(.om[1,20])' # List latest 20 files edited - newest
 # Items (ie files and directories)
 # alias -g li='ls -la --color=always' # long list everything - i.e. list items (files and folders) - alias
 # alias -g ll='ls -la --color=always' # long list everything
-alias -g ll='eza -l --color=always' # long list everything
+alias -g ll='eza -l ' # long list everything
 alias -g lle='eza --color=always --long --all --no-filesize --git --no-time | less' # long list everything lle -- long list (with) eza
-alias -g lt='ls -lt --color=always | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
-alias -g ltl='ls -lt --color=always | head -n 16 | less' # list 10 most recent items in this directory EXCEPT dotfiles  and uses `less`;
+# alias -g lt='ls -lt --color=always | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
+alias -g lt='ls -lt | head -n 16' # list 10 most recent items in this directory EXCEPT dotfiles 
+# alias -g lt='eza -l --sort=oldest --color=always | head -n 15' # not sure why it's oldest because that outputs neweat???
+# alias -g ltl='ls -lt --color=always | head -n 16 | less' # list 10 most recent items in this directory EXCEPT dotfiles  and uses `less`;
 alias -g l.='ls -d  --color=always .* ' # List hidden files and directories - short (alternative alias)
 # alias -g lih='ls -d .* ' # List all hidden items i.e. files and directories - short - alias
 alias -g lih="ls -la | grep ' \..*$'" # List all hidden items i.e. files and directories - long -  alias
@@ -605,6 +570,8 @@ alias -g t4="tree -alL 4"
 # View last 20 edited files in order
 ls20() { ls -lt  **/*(.om[1,20]) }
 
+alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lrt {} + | less'
+
 #}}}
 #{{{ BASH
 # Length of a string
@@ -640,17 +607,17 @@ pyserve() { source /home/donagh/.virtualenvs/beauty-http-server/bin/activate && 
 
 # To paste  Hex char eg “ into Ex buffer use  C-Vu201c
 
-dec2hex() { echo "obase=16; ibase=10; $1" | bc }
-dec2bin() { echo "obase=2; ibase=10; $1" | bc }
-dec2oct() { echo "obase=8; ibase=10; $1" | bc }
+# dec2hex() { echo "obase=16; ibase=10; $1" | bc }
+# dec2bin() { echo "obase=2; ibase=10; $1" | bc }
+# dec2oct() { echo "obase=8; ibase=10; $1" | bc }
 
 # Usage ->% dec2hex 22
 
 # convert to decimal
 
-bin2dec() { echo "obase=10; ibase=2; $1" | bc }
-oct2dec() { echo "obase=10; ibase=8; $1" | bc }
-hex2dec() { echo "obase=10; ibase=16; $1" | bc }
+# bin2dec() { echo "obase=10; ibase=2; $1" | bc }
+# oct2dec() { echo "obase=10; ibase=8; $1" | bc }
+# hex2dec() { echo "obase=10; ibase=16; $1" | bc }
 
 #}}}
 #{{{ NETWORKING 
@@ -661,9 +628,7 @@ hex2dec() { echo "obase=10; ibase=16; $1" | bc }
 # original command = 'dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | awk -F'"' '{ print $2}'"
 # alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com'  --> "88.87.194.23" i.e. with "" surrounding the IP Address. How to remove?
 # get "external"  LAN IPv4 address
-#alias -g ipec='ip=$(curl -s ifconfig.me)'
-alias -g ipec='curl -s ifconfig.me'
-# 2025-08-04
+alias -g ipe='dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | tr "\"" " " '
 # curl ipinfo.io
 # curl ifconfig.me
 # curl icanhazip.com
@@ -677,20 +642,16 @@ alias -g ipi="ip --color=auto -c -4 addr | rg 192 | cut -d'/' -f1 | tr 'inet' ' 
 #
 # alias -g ping='ping -c3 '
 alias png='ping -c4 8.8.8.8' # ping google to check if there is internet access
+stem='192.168.1.'
+ping4() { ping -c4 $stem$1 } # shorthand for ping -c4 <ip-addr>
 alias -g pong='~/.scripts/pong.sh' # png but shortened; if no out put, then internet is up; if not, no. of errors;
 alias avg='png G rtt | cut -d '/' -f5' # average png time atm. Compared to what? Is internet slow or not?
 # alias to get my IP address of digital ocean website (2020-02-17)
-alias site='dig donaghmccarthy.ie +short'
+# alias site='dig donaghmccarthy.ie +short'
 #}}}
-#{{{ CONTAINERS
-# On Arch Lenovo
-# $HOME/MyContainer is an systemd-nspawn -- see https://wiki.archlinux.org/title/Systemd-nspawn
-# to start it 
-mycont() { sudo systemd-nspawn -b -D ~/MyContainer }
-
 #{{{ PATHS & FILES
 # For use when using rg etc. e_ for echo, like g_ for goto
-e_creds() { echo /home/donagh/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
+# e_creds() { echo /home/donagh/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
 # USAGE: rg -C3 "donagh@donaghmccarthy.me" $(e_creds)
 #}}}
 #{{{ ON REBOOT
@@ -699,8 +660,8 @@ e_creds() { echo /home/donagh/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
 # LAN servers for sshrpi, s_books, s_passords
 # s_books() { cd /home/donagh/REPOS/books && python -m http.server 8088 }
 # s_passwords() { cd /home/donagh/DONAGHS/MY_ZIM/Computer && python -m http.server 8089 }
-s_passwords() { 'python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0' }
-s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.0' }
+# s_passwords() { 'python -m http.server 8088  --directory ~/DONAGHS/MY_ZIM/Computer --bind 0.0.0.0' }
+# s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.0' }
 # open 4 panes with the above and one spare
 # ttmux() { /home/donagh/.scripts/tmux.sh }
 # session for emacs
@@ -708,7 +669,8 @@ s_books() { 'python -m http.server 8089  --directory ~/REPOS/books --bind 0.0.0.
 # tad() { tmux attach-session -t daily } #  2023-10-20
 # tma() { tmux a } # 2024-07-09
 
-killt() { kill $(pidof tmux) }
+# tmuxp load 
+tml() { tmuxp load $HOME/.tmuxp/my-6-daily-tabs.yaml }
 
 # === SERVERS ===
 # start zim, cifs and dropbox
@@ -740,8 +702,6 @@ undmd() { /home/donagh/.scripts/und.sh }
 
 # enter text (by typing or pasting) and replace space with underline in that text
 und() { /home/donagh/.scripts/replace_space_with_underline.sh }
-
-
 
 
 #}}}

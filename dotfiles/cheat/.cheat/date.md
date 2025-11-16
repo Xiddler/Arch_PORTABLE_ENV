@@ -1,14 +1,11 @@
-# QUICKIES
-
-echo  $(date +"%Y-%m-%d")
-
-
-
 # Help
 
 
 See ~/.cheat/time.md for timezones and system time etc. and also ~/.cheat/timezones.md
 
+# QUICKIES
+
+->% echo  $(date +"%Y-%m-%d")
 
 # date utility
 ->%  date --help

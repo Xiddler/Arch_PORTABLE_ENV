@@ -1,7 +1,3 @@
-# QUICKIES
-
-git config set --global user.name "Xiddler" && git config set --global user.email "xiddler@gmail.com"
-
 # Refs
 
 ## Webrefs

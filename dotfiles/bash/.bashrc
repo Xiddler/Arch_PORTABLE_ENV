@@ -1,9 +1,19 @@
-# donagh
-zsh -l
+# donaghs
+# launch zsh
+
+# source /home/donagh/.zshrc
+# zsh -l
+# tmux attach-session -t my-6-daily-tabs
+
 # Add bash aliases.
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
+
+# FUNCTEST
+# set -o functrace
+# set -o functrace
+limit funcnest 1000
 
 # functions for shortcuts: original in .zsh_aliases
 # inserted in .bashrc to allow vim to access them
@@ -135,14 +145,14 @@ HISTFILESIZE=2000
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
+# if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    # debian_chroot=$(cat /etc/debian_chroot)
+# fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-     xterm|xterm-color|*-256color) color_prompt=yes;;
-esac
+# case "$TERM" in
+     # xterm|xterm-color|*-256color) color_prompt=yes;;
+# esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window

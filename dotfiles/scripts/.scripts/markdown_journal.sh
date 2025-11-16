@@ -13,8 +13,7 @@ md_journal() {
   local month=$(date +%m)
   local today=$(date +%Y-%m-%d)
   local dow=$(date +%A)
-  # local myDir='/run/media/donagh/USB128GB/DONAGHS/personal/journal/'$year/$month
-  local myDir='/home/donagh/DONAGHS/personal/journal/'$year/$month
+  local myDir='/run/media/donagh/USB128GB/DONAGHS/personal/journal/'$year/$month
   mkdir -p $myDir
   # local filen=$myDir/`date +%d-%m`\.md
   local filen=$myDir/$(date +%d-%m)\.md

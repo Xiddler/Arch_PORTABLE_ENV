@@ -13,11 +13,6 @@ EMOJIS
 SESSIONS
 Arrows
 
-# QUICKIES
-
- the vim sudo trick — for when you open a file using vim but need sudo privileges to save it
-:w !sudo tee %
-
 # HELP
 
 ## Other vim* cheats
@@ -651,7 +646,7 @@ https://github.com/jceb/vim-orgmode/blob/master/doc/orgguide.txt
 plugin --> git clone https://github.com/Yggdroot/indentLine
  For code indented with tabs I think there is no need to support it, because you can use :set list lcs=tab:\|\
 
-# sudo trick :w !sudo tee %
+# sudo trick
 :w !sudo tee %
 
 # Numbered List
