@@ -21,7 +21,7 @@ alias -g C='| xclip -selection clipboard'
 alias hg=histgrep
 alias hj='history'
 alias -g pss='python3 -m http.server 5500'
-alias -g ra='ranger'
+alias -g ra='/usr/sbin/ranger'
 # alias synaptic='sudo synaptic'
 # alias tm="calc -d 'read qtime; qtime(0)'" # sudo apt install apcalc WINTER TIME
 # alias tm="calc -d 'read qtime; qtime(1)'" # sudo apt install apcalc SUMMER TIME
@@ -316,7 +316,9 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 # PASSWORDS OUT 
 # LINUX - Toshiba
 # alias -g passout='cat $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt|rg -i -A5 ' # alternative alias for catt
-passout() { rg -i "$1" $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
+# passout() { rg -i "$1" $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
+passout() { rg -C5 -i "$1" /home/donagh/ZIM_WIKI/Computer/11SignUps.txt }
+
 alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
 # added 2022-03-20  using jq and 11SignUps.json
 pout() { jq '.passwords' $HOME/REPOS/11SignUps.json | rg -A4 $1 }
@@ -397,12 +399,14 @@ hme() { cd $HOME }
 
 # ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@192.168.1.86 } 
 # from Leonovo Arch
-ssht() { ssh -i /home/donagh/.ssh/id_to_toshiba donagh@donagh-satellitep50c.home }
+# ssht() { ssh -i /home/donagh/.ssh/id_to_toshiba donagh@donagh-satellitep50c.home }
+ssht() { ssh -i /home/donagh/.ssh/id_ed_Toshiba donagh@192.168.1.86 }
 # ssh into the RPi
 # sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
 # sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
 # 2025-05-14 
-sshrpi() { ssh -i ~/.ssh/id_ed25519_RPi donagh@192.168.1.24 }
+# sshrpi() { ssh -i ~/.ssh/id_ed25519_RPi donagh@192.168.1.24 }
+sshrpi() { ssh -i ~/.ssh/id_ed_raspi donagh@192.168.1.24 }
 # alias -g sshdo='ssh -i $HOME/.ssh/id_rsa_do donagh@142.93.37.252'
 #}}}
 #{{{ DOTFILES

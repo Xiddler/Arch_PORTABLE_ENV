@@ -17,6 +17,11 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 # 2025-07-23 — seems I need to source this file after ssh-ing from Windows Powershell; that usen't be the case;
 tmux attach-session -t my-6-daily-tabs
 
+# oclock for the desktop — top right
+if  ! $(pgrep -f oclock) ; then
+            oclock -geometry 48x48-0+0 &
+fi
+
 
 ######################################
 # emax on WSL auto
@@ -550,7 +555,7 @@ export FZF_COMPLETION_DIR_COMMANDS="cd pushd rmdir tree ls"
 # dirjump - use -> % d to see 10 most recent directories visited. https://github.com/imambungo/dirjump
 # the author says he no longer maintains this and uses zoxide instead. But I like it!
 # note I git cloned the full repo to $HOME/PORTABLE_ENV/dirjump/dirjump on 2024-06-25
-source ~/.config/dirjump/dirjump/dirjump
+source ~/.config/dirjump/dirjump
 # echo 'source ~/.config/dirjump/dirjump' >> ~/.zshrc
 
 
