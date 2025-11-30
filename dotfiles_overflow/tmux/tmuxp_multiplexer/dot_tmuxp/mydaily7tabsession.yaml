@@ -22,7 +22,8 @@ windows:
 
       - shell_command: # pane no. 1
 
-          - mycont
+         #- mycont
+         # this was for a bash tab
 
 
 
@@ -32,7 +33,7 @@ windows:
 
       - shell_command 
 
-          - echo "ssh -i /home/donagh/.ssh/id_Win11 donagh@192.168.1.49"
+          - echo "ssh -i /home/donagh/.ssh/id_ed_Win11 donagh@192.168.1.49"
 
   - window_name: RPi
 
@@ -40,7 +41,7 @@ windows:
 
       - shell_command:
 
-          - echo "ssh -i /home/donagh/.ssh/id_RPi donagh@192.168.1.24"
+          - echo "ssh -i /home/donagh/.ssh/id_ed_raspi donagh@192.168.1.24"
 
 
   - window_name: copyparty
@@ -57,7 +58,7 @@ windows:
 
       - shell_command: 
 
-          - sudo -S <<< 1234 modprobe uinput && sudo /home/donagh/.cargo/bin/kanata -c /home/donagh/.config/kanata/config.kbd
+          - sudo -S <<< 1234 /home/donagh/.cargo/bin/kanata -c /home/donagh/.config/kanata/donagh.kbd
 
 
 

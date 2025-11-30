@@ -212,7 +212,7 @@ nn() { nvim ~/.config/nvim/init.lua }
 #}}}
 # {{{ MANJARO
 # sps() { pamac search $ }
-# spi() { sudo pamac install $ }
+spi() { sudo pamac install $1 }
 #
 #
 # }}}
@@ -484,6 +484,7 @@ lg() { lazygit }
 # note eza is a dependency
 # alias -g ls="eza"
 # eza: Option --time (-t) has no "--color=always" setting (choices: modified, changed, accessed, created)
+lss() { eza }
 
 # List directories / files. Code: f file, d directory, l symlink, i item (file/directory),  n non-.
 # Duplicate options are given where zsh is available / known to me

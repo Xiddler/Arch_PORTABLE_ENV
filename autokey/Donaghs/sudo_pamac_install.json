@@ -1,17 +1,15 @@
 {
     "type": "phrase",
-    "description": "pamac_search",
-    "modes": [
-        1
-    ],
-    "usageCount": 5,
+    "description": "sudo_pamac_install",
+    "modes": [],
+    "usageCount": 2,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "sps"
+            "spi"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -27,5 +25,5 @@
         "regex": null,
         "isRecursive": false
     },
-    "sendMode": "kb"
+    "sendMode": "<ctrl>+v"
 }
