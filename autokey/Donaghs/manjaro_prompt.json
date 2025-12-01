@@ -1,10 +1,10 @@
 {
     "type": "phrase",
-    "description": "arch_prompt",
+    "description": "manjaro_prompt",
     "modes": [
         1
     ],
-    "usageCount": 27,
+    "usageCount": 50,
     "prompt": false,
     "omitTrigger": false,
     "matchCase": false,

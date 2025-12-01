@@ -5,13 +5,13 @@
     "modes": [
         1
     ],
-    "usageCount": 123,
+    "usageCount": 127,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "hf"
+            "jl"
         ],
         "backspace": true,
         "ignoreCase": false,

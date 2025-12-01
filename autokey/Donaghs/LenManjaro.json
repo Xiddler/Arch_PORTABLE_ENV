@@ -1,19 +1,21 @@
 {
-    "type": "script",
-    "description": "exit_shell",
-    "store": {},
-    "modes": [],
-    "usageCount": 33,
+    "type": "phrase",
+    "description": "LenManjaro",
+    "modes": [
+        1
+    ],
+    "usageCount": 3,
     "prompt": false,
     "omitTrigger": false,
+    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "xx"
+            "lj"
         ],
         "backspace": true,
         "ignoreCase": false,
-        "immediate": true,
+        "immediate": false,
         "triggerInside": false,
         "wordChars": "[\\w]"
     },
@@ -24,5 +26,6 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    }
+    },
+    "sendMode": "<ctrl>+v"
 }

@@ -164,7 +164,7 @@ IdentityFile ~/.ssh/keyname     :: do I mean for e.g. id_rsa?
 # This logs into the server, and copies the public key to it.
 ssh-copy-id -i ~/.ssh/keyname user@remote_machine
 
-# Checking the ssh procesd
+# Checking the ssh process
 ssh -T git@github.com
 eval $(ssh-agent -s)      :: This starts the ssh-agent process 
 ssh-add ~/.ssh/keyname

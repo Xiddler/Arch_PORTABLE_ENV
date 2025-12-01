@@ -15,10 +15,13 @@ XDG_CACHE_HOME="/home/donagh/.cache"
 
 # tmuxp load /home/donagh/.tmuxp/my-6-daily-tabs.yaml
 # 2025-07-23 — seems I need to source this file after ssh-ing from Windows Powershell; that usen't be the case;
-tmux attach-session -t my-6-daily-tabs
+# add the if statement on 2025-11-30
+if [[ ! tmux ]] ; then
+    tmux attach-session -t my-6-daily-tabs
+fi
 
 # oclock for the desktop — top right
-if  ! $(pgrep -f oclock) ; then
+if  [[ ! $(pgrep -f oclock) ]] ; then
             oclock -geometry 48x48-0+0 &
 fi
 
@@ -225,10 +228,12 @@ autoload copy-earlier-word
 
 ## Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 #HISTSIZE=1000
-#SAVEHIST=1000
+export SAVEHIST=1000
 # HISTFILE=$HOME/.zsh_history
-HISTFILE=$HOME/.zhistory
-HISTSIZE=99999 
+export HISTFILE=$HOME/.zhistory
+# HISTFILE=/home/donagh/.zhistory
+
+export HISTSIZE=99999 
 HISTFILESIZE=99999
 
 ## Use modern completion system
@@ -484,8 +489,14 @@ eval "$(zoxide init zsh)"
 
 
 # mcfly - for history Ctrl-R
-# eval "$(mcfly init zsh)"
-# export MCFLY_KEY_SCHEME=vim
+# installed on LenManjaro 2025-11-30
+eval "$(mcfly init zsh)"
+export MCFLY_KEY_SCHEME=vim
+# higher numbers weight toward shorter matches. Values in the 2-5 range get good results 
+export MCFLY_FUZZY=2
+
+
+
 
 # emacs - to get emacsclient to work
 # export ALTERNATE_EDITOR=""

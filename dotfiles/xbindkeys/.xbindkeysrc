@@ -50,6 +50,15 @@
 
 "wmctrl -xa okular"
   alt+v
+
+"wmctrl -xa konsole"
+  alt+c
+
+"wmctrl -xa kcalc"
+  alt+q
+
+
+
 ##########################################
 #       END DONAGHS                       
 ##########################################

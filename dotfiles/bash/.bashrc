@@ -15,6 +15,19 @@ fi
 # set -o functrace
 limit funcnest 1000
 
+# HISTORY
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+# HISTFILE='/home/donagh/.bash_history'
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+# shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 # functions for shortcuts: original in .zsh_aliases
 # inserted in .bashrc to allow vim to access them
 # alc() { $EDITOR $personal/minding_me/alcohol_journal.md }
@@ -122,16 +135,6 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-# shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

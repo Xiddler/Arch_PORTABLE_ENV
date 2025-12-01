@@ -28,7 +28,7 @@ Second line of text
 (defsrc
   esc      i    p
   caps d h j k l 
-  <    b   m
+  <   b   m
 )
 
 (defvar
@@ -47,7 +47,7 @@ Second line of text
 (deflayer base
     @capsesc     _   _ 
     @escctrl _ _ _ _ _
-    @altnew _ _
+    @altnew  _ _
 )
 
 ;; when I hold the `<` key (beside the `z` key) then h j k l will perform left down up right outside of vim 

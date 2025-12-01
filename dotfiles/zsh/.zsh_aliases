@@ -44,7 +44,8 @@ alias -g ap='apostrophe '
 # alias -g autok='python $HOME/REPOS/2programming/python/2python_studies/json_stuff/4autokey_test.py'
 alias -g trigs='python $HOME/PORTABLE_ENV/scripts/autokey_trigger_table.py'
 alias -g obs='python ~/PORTABLE_ENV/scripts/CLICK_obsid_to_ext4path.py'
-alias -g stow='stow -d /home/donagh/PORTABLE_ENV/dotfiles  -t /home/donagh '
+alias -g sstow='stow -d /home/donagh/Arch_PORTABLE_ENV/dotfiles  -t /home/donagh '
+alias -g cstow='stow -d /home/donagh/Arch_PORTABLE_ENV/dotfiles  -t /home/donagh/.config/$1 '
 # ff() {fortune}
 # ss() {shuf -n2 ~/REPOS/Quotations/quotes.md } # note: ss is a networking utility!
 # alias -g take="mkdir -p "
@@ -163,6 +164,12 @@ alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # 2020-12-10 
 # alias hanging='cd $HOME/DONAGHS/ZIM/Computer/ && tail -n4 0_Hanging.txt && cd $HOME/ziim/Donaghs/00_Home/ && tail -n4 0_Hanging.txt'
 # end navigation
+#}}}
+#{{{ KANATA
+
+kant() { sudo <<< 1234 /home/donagh/.cargo/bin/kanata -c /home/donagh/.config/kanata/donagh.kbd }
+
+
 #}}}
 #{{{ doom emacs
 # alias -g der="doom run" # doom emacs run; 
