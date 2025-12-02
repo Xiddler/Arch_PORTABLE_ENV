@@ -5,7 +5,7 @@ Filepath
 # Using stow
 # =============================================================================================================
 
-Sample usage for `git`
+## Sample usage for `git`
 
 -> % stow -d /home/donagh/Arch_PORTABLE_ENV/dotfiles  -t /home/donagh git
 
@@ -19,7 +19,7 @@ There are different target directories
 1. /home/donagh
 2. /home/donagh/<package/> (eg kanata, nvim, zim, ranger)
 
-It's handy to create an alias for the $HOME directory
+## It's handy to create an alias for the $HOME directory
 alias -g sstow='stow -d /home/donagh/Arch_PORTABLE_ENV/dotfiles  -t /home/donagh '
 which allows the handy command
 -> % sstow git 
@@ -44,6 +44,7 @@ xbindkeys
 zsh
 
 
+## ls $HOME showing the symlinks
 ~
 ❯ ls -la G ">"
 
@@ -64,6 +65,18 @@ lrwxrwxrwx 1 donagh donagh    37 Nov 30 11:40 .zshrc -> Arch_PORTABLE_ENV/dotfil
 
 
 
+## cstow
+
+alias -g cstow='stow -d /home/donagh/Arch_PORTABLE_ENV/$1  -t /home/donagh/.config/$1 '
+(not tested in real )
+
+samples usage
+-> %  cstow kanata
+
+cstow is an alias for configurations that appear in the $HOME/.config folder, being:
+
+autokey                 :: system-wide abbreviations & text expander
+kanata                  :: system-wide keyboard configuration; eg CapsLock to Esc & Ctrl ; I use the file donagh.kbd in Dec 2025
 
 
 

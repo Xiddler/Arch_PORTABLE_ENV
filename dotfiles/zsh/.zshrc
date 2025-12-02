@@ -680,7 +680,7 @@ zstyle ':completion:*:' menu select # tab opens cmp menu
 #########################################################
 
 # Use Ctrl G to toggle between local and global history
-source $HOME/Arch_PORTABLE_ENV/zsh/per-directory-history/per-directory-history.zsh
+source $HOME/Arch_PORTABLE_ENV/zsh_info/per-directory-history/per-directory-history.zsh
 # ->% echo $PER_DIRECTORY_HISTORY_TOGGLE --▷ ^G
 
 #########################################################
@@ -689,7 +689,7 @@ source $HOME/Arch_PORTABLE_ENV/zsh/per-directory-history/per-directory-history.z
 # suggests commands as you type based on history and completions
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # changed to the following on 2025-07-27 and it now works
-source ~/Arch_PORTABLE_ENV/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source ~/Arch_PORTABLE_ENV/zsh_info/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 # see a completion offered after the cursor in a muted gray color
 # git clone https://github.com/zsh-users/zsh-autosuggestions ~/PORTABLE_ENV/zsh
 # ln -s ~/PORTABLE_ENV/zsh/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
@@ -704,7 +704,7 @@ source ~/Arch_PORTABLE_ENV/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zs
 # zsh-syntax-highlighting plugin last thing in this file
 #########################################################
 # plugins=( zsh-syntax-highlighting )
-source $HOME/Arch_PORTABLE_ENV/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/Arch_PORTABLE_ENV/zsh_info/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 
