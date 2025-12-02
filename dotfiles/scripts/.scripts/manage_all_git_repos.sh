@@ -16,19 +16,32 @@ g_poe="$HOME/Arch_PORTABLE_ENV/"             # On github
 #g_pers="$HOME/DONAGHS/personal/"
 # g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only # NOTE: 2023-10-06 MY_ZIM handled on Windows 11 currently
 # g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
-g_zim="$HOME/ZIM_WIKI"
+g_comp="$HOME/ZIM_WIKI/Computer"
 
 # directories=( $g_poe $g_org $g_pers $g_comp )
-directories=( $g_poe $g_zim )
+##############################################
+
+echo "##############################################"
+echo " "
+echo "edit ~/.scripts/manage_all_git_repos.sh" 
+echo " "
+# echo "##############################################"
+
+directories=( $g_poe $g_comp )
 for mydir in "${directories[@]}"; 
     do 
         # echo -e "$mydir";
         # printf '%s\n ' "$mydir"
+       echo "##############################################"
+       echo " "
        echo -e "$mydir" && cd "$mydir" && git status # | tail -n 8
-       echo "-------------------------------------------------------"
+       echo " "
        # cd "$mydir" && git add -A # | tail -n 8
 done
 
-echo "MY_ZIM on LenManjaro from Nov 2025"
+
+echo "##############################################"
+echo " "
+echo "ZIM_WIKI/Computer on LenManjaro from Nov 2025"
 echo "MY_ZIM WAS handled on Windows 11 from July 2023 to July 2025"
 

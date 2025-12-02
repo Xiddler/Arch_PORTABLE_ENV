@@ -156,7 +156,7 @@ alias -g ...='../../'
 alias -g ....='../../../'
 alias -g .....='../../../../'
 alias -g ......='../../../../../'
-alias -g szc='cd $HOME/DONAGHS/MY_ZIM/Computer/'
+alias -g szc='cd $HOME/ZIM_WIKI/Computer/'
 alias -g ziim='cd $HOME/ZIM/'
 alias -g szo='cd $HOME/DONAGHS/ZIM/ORG/'
 # shortcut to Tiny 128 USB drive
@@ -326,7 +326,7 @@ timer-dae() { echo "1234" | sudo -S systemctl daemon-reload }
 # passout() { rg -i "$1" $HOME/DONAGHS/MY_ZIM/Computer/11SignUps.txt }
 passout() { rg -C5 -i "$1" /home/donagh/ZIM_WIKI/Computer/11SignUps.txt }
 
-alias -g catt='cat $HOME/ZIM/Computer/11SignUps.txt|rg -i -A5 '
+alias -g catt='cat $HOME/ZIM_WIKI/Computer/11SignUps.txt|rg -i -A5 '
 # added 2022-03-20  using jq and 11SignUps.json
 pout() { jq '.passwords' $HOME/REPOS/11SignUps.json | rg -A4 $1 }
 # Windows 11
@@ -466,7 +466,7 @@ alias -g poe="$HOME/Arch_PORTABLE_ENV/"             # Quickie
 alias -g g_org="$HOME/Dropbox/org-mode/org/"       # this tracks my .org files
 alias -g g_pers="$HOME/DONAGHS/personal/"
 pers() { cd "$HOME/DONAGHS/personal/" && ls }
-alias -g g_comp="$HOME/DONAGHS/MY_ZIM/Computer/"   # zim/Computer only
+alias -g g_comp="$HOME/ZIM_WIKI/Computer/"   # zim/Computer only
 alias -g g_all_org="$HOME/DONAGHS/all_org/"        # this only tracks doom-notes.org
 
 # look at MY_PRECIOUS_DATA in the backups 
