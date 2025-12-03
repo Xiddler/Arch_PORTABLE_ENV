@@ -682,6 +682,12 @@ zstyle ':completion:*:' menu select # tab opens cmp menu
 # Use Ctrl G to toggle between local and global history
 source $HOME/Arch_PORTABLE_ENV/zsh_info/per-directory-history/per-directory-history.zsh
 # ->% echo $PER_DIRECTORY_HISTORY_TOGGLE --▷ ^G
+#
+#         atuin shell history — sqlite
+echo 'eval "$(atuin init zsh)"' 
+
+
+# end atuin
 
 #########################################################
 # zsh-autosuggestions 

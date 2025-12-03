@@ -1,4 +1,5 @@
 ;; Oct 2025
+;; Re-installed anew on the LenManjaro Chromebook on 2025-12-03
 
 ;; ***********************************************************************************************
 ;; packages
@@ -59,7 +60,20 @@
   (evil-mode))
 
 ;; after installing the package evil-escape-mode from Melpa
-(evil-escape-mode 1)
+;; couldn't locate this on 2025-12-03 --- instead I try using key-chord-mode instead; see next item
+;; see https://github.com/syl20bnr/evil-escape
+;; (evil-escape-mode 1)
+
+;; 
+;; M-x package-install key-chord [ on 2025-12-03 ]
+(use-package key-chord
+  :ensure t
+  :init
+  (key-chord-mode))
+
+(setq key-chord-two-keys-delay 0.5)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+(key-chord-mode 1)
 
 ;; end evil-mode
 ;; ----------------------------------------------------------------------------------------------
