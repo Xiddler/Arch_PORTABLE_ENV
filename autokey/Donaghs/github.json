@@ -1,7 +1,9 @@
 {
     "type": "phrase",
     "description": "github",
-    "modes": [],
+    "modes": [
+        1
+    ],
     "usageCount": 10,
     "prompt": false,
     "omitTrigger": false,
