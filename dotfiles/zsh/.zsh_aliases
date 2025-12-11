@@ -219,7 +219,8 @@ nn() { nvim ~/.config/nvim/init.lua }
 #}}}
 # {{{ MANJARO
 # sps() { pamac search $ }
-spi() { sudo pamac install $1 }
+# not supposed to use sudo with pamac — https://wiki.manjaro.org/index.php/Pamac
+spi() { pamac install $1 }
 #
 #
 # }}}

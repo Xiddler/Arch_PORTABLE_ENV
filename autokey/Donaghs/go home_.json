@@ -1,15 +1,17 @@
 {
-    "type": "phrase",
-    "description": "github",
-    "modes": [],
-    "usageCount": 10,
+    "type": "script",
+    "description": "go home ",
+    "store": {},
+    "modes": [
+        1
+    ],
+    "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
-    "matchCase": false,
     "showInTrayMenu": false,
     "abbreviation": {
         "abbreviations": [
-            "gh"
+            "jl"
         ],
         "backspace": true,
         "ignoreCase": false,
@@ -24,6 +26,5 @@
     "filter": {
         "regex": null,
         "isRecursive": false
-    },
-    "sendMode": "<ctrl>+v"
+    }
 }

@@ -2,9 +2,7 @@
     "type": "script",
     "description": "home",
     "store": {},
-    "modes": [
-        1
-    ],
+    "modes": [],
     "usageCount": 127,
     "prompt": false,
     "omitTrigger": false,
