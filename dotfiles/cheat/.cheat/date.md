@@ -156,3 +156,11 @@ date -Is -ud '1998-07-12'
 ->% date --iso-8601
 2025-05-18
 
+# convert history epoch date to human
+
+->%>  tail -n 20 .zhistory | cut -d":" -f2  | head -n 1 | date -d @$?
+
+Thu Jan  1 01:00:01 AM IST 1970
+
+OK, not right but probably possible
+

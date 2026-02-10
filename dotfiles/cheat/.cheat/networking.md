@@ -1,4 +1,28 @@
 # see also: ip.md; 
+# QUICKIES
+
+
+# Networking tools
+
+URL: https://www.geeksforgeeks.org/linux-unix/network-configuration-trouble-shooting-commands-linux/
+for basic usage of the following networking commands on Linux
+
+_____________________________________________________________________________________
+            Utility                         ::      Sample command usage
+_____________________________________________________________________________________
+Ping (Packet Internet Groper)               :: -%> ping -c4 google.com 
+nslookup                                    :: -%> nslookup google.com
+traceroute                                  :: -%> traceroute google.com
+host                                        :: -%> host google.com
+netstat                                     :: -%> netstat 
+Arp                                         :: -%> arp
+ifconfig                                    :: -%> <defunct> use `ip` instead
+ip                                          :: -%> ip addr
+Dig                                         :: -%> dig A google.com
+Route                                       :: -%> route
+Ethtool                                     :: -%> ethtool eth0
+Hostname                                    :: -%> hostname
+_____________________________________________________________________________________
 
 # check open ports
 lsof -Pni4 | grep LISTEN

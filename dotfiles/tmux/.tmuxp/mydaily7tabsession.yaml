@@ -16,14 +16,13 @@ windows:
 
 
 
-  - window_name: bash
+  - window_name: espanso
 
     panes:
 
-      - shell_command: # pane no. 1
+      - shell_command: 
 
-         #- mycont
-         # this was for a bash tab
+         - echo "vim ~/.config/espanso/match/base.yml"
 
 
 

@@ -26,7 +26,7 @@ Second line of text
 )
 
 (defsrc
-  esc      i    p
+  esc    t  i    p
   caps d h j k l 
   <   b   m
 )
@@ -45,16 +45,16 @@ Second line of text
 
 
 (deflayer base
-    @capsesc     _   _ 
+    @capsesc   _  _   _ 
     @escctrl _ _ _ _ _
-    @altnew  _ _
+    @altnew   _ _
 )
 
 ;; when I hold the `<` key (beside the `z` key) then h j k l will perform left down up right outside of vim 
 ;; e.g. in emacs mini-buffer; in zim <-- basic vim motions in zim!
 
 (deflayer donsie
-    _            S-1    +
+    _       `     S-1    +
     _  del left down up right
     _  bspc   A-x
 )

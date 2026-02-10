@@ -61,6 +61,44 @@ Superscripts and subscripts
 2ₙ  nS 
 
 
+with Nerd Fonts installed
+     uf00c   tick
+     uf00c   wrong
+     uf408   github
+     uf05a   info
+
+Powerline
+U+E0A0-E0D4
+Status bar separators and arrows
+
+
+
+
+Font Awesome
+U+F000-F2E0
+General purpose icons
+
+
+
+
+
+Devicons
+U+E700-E7C5
+Programming language logos
+
+
+
+
+
+
+Octicons
+U+F400-F532
+GitHub-style icons
+
+
+
+
+
 
 Greek alphabet
 

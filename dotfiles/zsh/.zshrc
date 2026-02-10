@@ -2,6 +2,11 @@
 # [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 # source ~/.zshrc
 
+###################################################################################################################
+###################################################################################################################
+
+
+
 #  XDG Base Directory Specification
 XDG_CONFIG_HOME="/home/donagh/.config"
 XDG_CACHE_HOME="/home/donagh/.cache"
@@ -392,6 +397,12 @@ export EDITOR="vim"
 bindkey 'jk' vi-cmd-mode 
 # cx for clear screen -- doesn't work perfectly
 bindkey 'cx' clear-screen
+bindkey 'xc' clear-screen
+bindkey "j'" clear-screen
+
+# binding a shortcut to a hardcoded string ; `jl` will now cd $HOME without needing to press <Enter> — for the win!
+bindkey -s 'jl' 'cd ^M'
+bindkey -s 'j;' 'cd - ^M'
 
 # / for search shell history
 # causes problems when entering / for filepaths
@@ -489,12 +500,13 @@ eval "$(zoxide init zsh)"
 
 
 # mcfly - for history Ctrl-R
-# installed on LenManjaro 2025-11-30
+# installed on LenManjaro 2025-11-30; reinstalled 2026-01-13 
 eval "$(mcfly init zsh)"
 export MCFLY_KEY_SCHEME=vim
 # higher numbers weight toward shorter matches. Values in the 2-5 range get good results 
 export MCFLY_FUZZY=2
 
+# also Ctrl-T for directories recently accessed
 
 
 
@@ -688,6 +700,9 @@ source $HOME/Arch_PORTABLE_ENV/zsh_info/per-directory-history/per-directory-hist
 
 
 # end atuin
+
+
+
 
 #########################################################
 # zsh-autosuggestions 

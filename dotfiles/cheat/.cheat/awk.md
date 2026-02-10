@@ -6,6 +6,14 @@
 
 ->%  printf '1\n2\n3\n' | awk '{ sum += $1} END {print sum}'
 
+## sum with field separator defined — in this case three tabs
+
+See personal/budget.md
+-%>  awk -F "\t\t\t" '{ sum += $2} END {print sum}' budget.md
+
+
+
+
 # wants.txt with two columns and items use _ to separate the words 
 
 ->%  awk -F" " '{ sum += $2 } END { print sum }'

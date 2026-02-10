@@ -1,0 +1,193 @@
+# espanso match file
+# /home/donagh/Arch_PORTABLE_ENV/dot_config/espanso/match/base.yml
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  # - trigger: ":qq"
+    # replace: ":date" # does not recurse to produce the date!
+
+    # empty triggers are not allowed
+  # - trigger: " "
+    # replace: " "
+
+
+
+  # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
+
+  # But matches can also be dynamic:
+  #
+
+# START DONAGHS
+  - trigger: "l4"
+    replace: "_____________________________________________________________________________________________________________________________________________________________"
+
+  - trigger: "dmc "
+    replace: "Donagh McCarthy "
+
+    # the following is for use in this file only
+#  - trigger: "trig"
+#    replace: "- trigger: \" \" \n  replace: \" \""
+#    that became recursive for some reason
+
+
+  # typo corrections
+  - regex: "\\bi " 
+    replace: "I "
+
+  - trigger: "ohter" 
+    replace: "other "
+
+  - trigger: "iim" 
+    replace: "I\'m"
+
+  - trigger: "iid" 
+    replace: "I\'d"
+
+  - trigger: "iil" 
+    replace: "I\'ll"
+
+  - trigger: "iiv" 
+    replace: "I\'ve"
+
+  # - regex: "\\bgh\\b" 
+    # replace: "github"
+# this is to allow tough, enough etc.   (Works!)
+    
+
+  - regex: "\\byt\\b" 
+    replace: "You Tube"
+
+  
+  - trigger: "smp" 
+    replace: "smartphone"
+
+  # Print the current date
+  - trigger: "qq"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d "
+
+  # Print the current full date & time
+  - trigger: "aq"
+    replace: "{{fulldate}}"
+    vars:
+      - name: fulldate
+        type: date
+        params:
+          format: "%Y-%m-%d:%H-%M "
+
+  # Print the current time
+  - regex: "\\btt\\b"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M "
+
+  - trigger: "ovv" 
+    replace: "Overview "
+
+  - trigger: "apz" 
+    replace: "Manj%> "
+
+  - trigger: "zp" 
+    replace: "-%> "
+
+  - trigger: "wb" 
+    replace: "webrefs "
+
+  - trigger: "@@h" 
+    replace: "donagh99@hotmail.com "
+
+  - trigger: "@@g" 
+    replace: "jamesdenismccarthy@gmail.com "
+
+  - trigger: "@@w" 
+    replace: "donaghmccarthybe@gmail.com "
+
+  - trigger: "@@x" 
+    replace: "xiddler@gmail.com"
+
+  - trigger: "dont " 
+    replace: "don't "
+
+  - trigger: "didnt" 
+    replace: "didn't"
+
+  - trigger: "wont" 
+    replace: "won't"
+
+  - trigger: " cant" 
+    replace: " can't"
+
+  - trigger: "taht" 
+    replace: "that "
+
+  - trigger: "wiht " 
+    replace: "with "
+  
+  - regex: "\\btl " 
+    replace: "~" 
+
+  - regex: "tdr\\b" 
+    replace: "TL;DR" 
+
+  - trigger: "wnat "
+    replace: "want "
+
+  # this regex avoids recursion
+  - regex: "\\b192\\b" 
+    replace: "192.168.1." 
+
+  - regex: "sff" 
+    replace: "significantly" 
+
+  - regex: "apx" 
+    replace: "approximately" 
+
+  - regex: "\\bie\\b"
+    replace: "i.e."
+
+  - regex: "\\beg "
+    replace: "e.g. "
+
+  - regex: "\\beu\\b"
+    replace: "€"
+
+  - regex: "\\bghh "
+    replace: "github "
+
+  - regex: " ot "
+    replace: " to "
+# END DONAGHS
+
+    
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+
+
+  # And much more! For more information, visit the docs: https://espanso.org/docs/

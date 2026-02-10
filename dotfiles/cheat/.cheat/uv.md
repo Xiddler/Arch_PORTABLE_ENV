@@ -205,3 +205,7 @@ To uv add <package>
 OR
 
 > uv pip install python-fasthtml
+
+# create virtualenv
+
+Manj%> uv venv $HOME/.virtualenvs/myvenv 

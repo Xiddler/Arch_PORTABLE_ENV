@@ -171,6 +171,17 @@ kant() { sudo <<< 1234 /home/donagh/.cargo/bin/kanata -c /home/donagh/.config/ka
 
 
 #}}}
+#{{{ ESPANSO
+# system-wide key modifiers and typo correction
+
+ve() {  vim ~/.config/espanso/match/base.yml }
+
+eson() { espanso service restart }
+esoff() { espanso service stop }
+
+
+
+#}}}
 #{{{ doom emacs
 # alias -g der="doom run" # doom emacs run; 
 # alias -g drr="doom run"
@@ -181,7 +192,7 @@ kant() { sudo <<< 1234 /home/donagh/.cargo/bin/kanata -c /home/donagh/.config/ka
  # open a file using vim
 # Aliases - vim
 # alias -g sp='vim $HOME/REPOS/TESTING/scratch_pad.txt'
-alias -g bx='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
+alias -g bx='vim $HOME/zzArchive/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
 alias -g sc='vim $HOME/REPOS/TESTING/scratch_pad.txt' # as used in doom-emacs and in vim. Perhaps buffer X?
 alias -g vt='vim ~/REPOS/TESTING/test.md'
 alias -g vtt='vim ~/TESTING/testing_vim.txt'
@@ -296,6 +307,8 @@ ch() { ls ~/.cheat/"$1" }
 lsc() { ls ~/.cheat }                   # list all cheats
 # fdc() { fd $1 ~/.cheat }
 gsc() { fd $1 ~/.cheat }                # find file in cheats i.e. if $1 in ~/.cheat
+
+kl() { cd $HOME && echo " " }
 
 #}}}
 #{{{ MARKDOWN 
