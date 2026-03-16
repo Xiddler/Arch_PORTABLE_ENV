@@ -31,8 +31,12 @@ matches:
   #
 
 # START DONAGHS
+
   - trigger: "l4"
     replace: "_____________________________________________________________________________________________________________________________________________________________"
+
+  - trigger: "l3"
+    replace: "______________________________________________________________________________________"
 
   - trigger: "dmc "
     replace: "Donagh McCarthy "
@@ -61,18 +65,36 @@ matches:
 
   - trigger: "iiv" 
     replace: "I\'ve"
+ 
+  - trigger: "htis "
+    replace: "this "
+
+    # for when I use a basic vim with -u vimrc file
+ ## - trigger: "lh "
+  ##  replace: "— "
+ 
 
   # - regex: "\\bgh\\b" 
     # replace: "github"
 # this is to allow tough, enough etc.   (Works!)
     
 
-  - regex: "\\byt\\b" 
-    replace: "You Tube"
+  #- regex: "\\byt\\b" 
+  #  replace: "You Tube"
+  - trigger: "yt "
+    replace: "YouTube "
 
   
   - trigger: "smp" 
     replace: "smartphone"
+
+  # 2026-03-15 
+  - trigger: "pxy "
+    replace: "ProjectXY "
+
+  # f for file
+  - trigger: "pxf "
+    replace: "ProjectXY.org "
 
   # Print the current date
   - trigger: "qq"
@@ -152,7 +174,10 @@ matches:
   - trigger: "wnat "
     replace: "want "
 
-  # this regex avoids recursion
+  - trigger: "OTHO"
+    replace: "OTOH"
+
+  # using regex avoids recursion
   - regex: "\\b192\\b" 
     replace: "192.168.1." 
 
@@ -162,20 +187,22 @@ matches:
   - regex: "apx" 
     replace: "approximately" 
 
-  - regex: "\\bie\\b"
-    replace: "i.e."
+  #- regex: "\\bie\\b"
+    #replace: "i.e."
 
-  - regex: "\\beg "
-    replace: "e.g. "
+  # - regex: "\\beg "
+   #  replace: "e.g. "
 
   - regex: "\\beu\\b"
     replace: "€"
 
   - regex: "\\bghh "
     replace: "github "
-
+    
   - regex: " ot "
     replace: " to "
+
+
 # END DONAGHS
 
     

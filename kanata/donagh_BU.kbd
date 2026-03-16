@@ -32,7 +32,7 @@ Second line of text
 
 (defsrc
   esc  e  t u  i    p
-  caps s d g h j k l 
+  caps d h j k l 
   <   b   m
 )
 
@@ -56,7 +56,7 @@ Second line of text
 
 (deflayer base
     @capsesc  _ _ _  _   _ 
-    @escctrl _ _ _ _ _ _ _
+    @escctrl _ _ _ _ _
     @altnew   _ _
 )
 
@@ -69,7 +69,7 @@ Second line of text
 
 (deflayer donsie
     _   =  `  S--   S-1    +
-    _  C-6 del S-2 left down up right
+    _  del left down up right
     _  bspc   A-x
 )
 
