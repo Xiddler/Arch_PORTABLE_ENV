@@ -1,0 +1,8 @@
+# 2026-04-07 
+# ln -s /home/donagh/Arch_PORTABLE_ENV/sc-im/scimrc ~/.config/scimrc
+
+set autocalc
+set numeric
+set numeric_decimal=0
+set overlap
+set xlsx_readformulas

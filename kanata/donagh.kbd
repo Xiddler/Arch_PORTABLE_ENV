@@ -1,5 +1,6 @@
 ;; based on https://github.com/jtroo/kanata/
-;; 2025-11-15
+;; 2026-03-25; 2025-11-15
+
 
 #|
 This text between the two pipe+octothorpe sequences is a multi-line comment.
@@ -23,6 +24,7 @@ Second line of text
 
 ;; Notes
 ;; S-1 for !
+;; S-` for ~ 
 ;; S-- for _ 
 
 (defcfg
@@ -33,7 +35,7 @@ Second line of text
 (defsrc
   esc  e  t u  i    p
   caps s d g h j k l 
-  <   b   m
+  <   b   n  m
 )
 
 (defvar
@@ -57,7 +59,7 @@ Second line of text
 (deflayer base
     @capsesc  _ _ _  _   _ 
     @escctrl _ _ _ _ _ _ _
-    @altnew   _ _
+    @altnew  _ _ _
 )
 
 ;; in the following layer:
@@ -70,8 +72,16 @@ Second line of text
 (deflayer donsie
     _   =  `  S--   S-1    +
     _  C-6 del S-2 left down up right
-    _  bspc   A-x
+    _  bspc  S-` A-x
 )
+
+
+;;   (defsrc
+  ;; esc  e  t u  i    p
+  ;; caps s d g h j k l 
+  ;; <   b  n  m
+ ;;  )
+
 
 
 

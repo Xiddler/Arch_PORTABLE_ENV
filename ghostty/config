@@ -52,10 +52,13 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-# DONAGHS
+# DONAGHS Donaghs
 
 # keybind = 'ctrl+a>n=new_window'
 # keybind = 'ctrl+a>t=new_tab'
+
+window-height = 48
+window-width = 186
 
 # using config from https://michaelbommarito.com/wiki/programming/tools/ghostty-configuration/
 background = 282c34

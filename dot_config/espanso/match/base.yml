@@ -114,6 +114,7 @@ matches:
         params:
           format: "%Y-%m-%d:%H-%M "
 
+
   # Print the current time
   - regex: "\\btt\\b"
     replace: "{{mytime}}"
@@ -147,6 +148,9 @@ matches:
   - trigger: "@@x" 
     replace: "xiddler@gmail.com"
 
+  - trigger: "@@z"
+    replace: "donaghmcc@zohomail.eu"
+
   - trigger: "dont " 
     replace: "don't "
 
@@ -167,6 +171,7 @@ matches:
   
   - regex: "\\btl " 
     replace: "~" 
+    # also kanata key + n --> ~ 
 
   - regex: "tdr\\b" 
     replace: "TL;DR" 
@@ -187,14 +192,18 @@ matches:
   - regex: "apx" 
     replace: "approximately" 
 
+  - regex: "rsp" 
+    replace: "responsibility" 
+  
+
   #- regex: "\\bie\\b"
     #replace: "i.e."
 
   # - regex: "\\beg "
    #  replace: "e.g. "
 
-  - regex: "\\beu\\b"
-    replace: "€"
+  - trigger: "uu "
+    replace: "€ "
 
   - regex: "\\bghh "
     replace: "github "
@@ -202,6 +211,8 @@ matches:
   - regex: " ot "
     replace: " to "
 
+  - trigger: "aslo "
+    replace: "also "
 
 # END DONAGHS
 

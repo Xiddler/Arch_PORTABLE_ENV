@@ -398,10 +398,10 @@ bindkey 'jk' vi-cmd-mode
 # cx for clear screen -- doesn't work perfectly
 bindkey 'cx' clear-screen
 bindkey 'xc' clear-screen
-bindkey "j'" clear-screen
+bindkey "jl" clear-screen
 
 # binding a shortcut to a hardcoded string ; `jl` will now cd $HOME without needing to press <Enter> — for the win!
-bindkey -s 'jl' 'cd ^M'
+bindkey -s "j'" 'cd ^M'
 bindkey -s 'j;' 'cd - ^M'
 
 # / for search shell history

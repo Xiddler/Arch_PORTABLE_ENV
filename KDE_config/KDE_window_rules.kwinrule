@@ -1,3 +1,10 @@
+[System settings]
+Description=System settings
+shortcut=Alt+S
+shortcutrule=5
+wmclass=systemsettings
+wmclassmatch=1
+
 [firefox]
 Description=firefox
 shortcut=Alt+B
@@ -30,8 +37,8 @@ wmclassmatch=3
 
 [okular]
 Description=okular
-shortcut=Alt+O
-shortcutrule=3
+shortcut=Alt+V
+shortcutrule=5
 wmclass=okular
 wmclassmatch=3
 
