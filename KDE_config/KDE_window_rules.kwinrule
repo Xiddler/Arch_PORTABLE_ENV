@@ -1,3 +1,15 @@
+[Application settings for Clock]
+Description=Application settings for Clock
+Enabled=false
+above=true
+aboverule=3
+clientmachine=localhost
+noborder=true
+noborderrule=3
+wmclass=oclock Clock
+wmclasscomplete=true
+wmclassmatch=1
+
 [System settings]
 Description=System settings
 shortcut=Alt+S
@@ -41,6 +53,14 @@ shortcut=Alt+V
 shortcutrule=5
 wmclass=okular
 wmclassmatch=3
+
+[yakuake]
+Description=yakuake
+shortcut=Alt+Y
+shortcutrule=5
+wmclass=yakuake
+wmclasscomplete=true
+wmclassmatch=1
 
 [zim]
 Description=zim

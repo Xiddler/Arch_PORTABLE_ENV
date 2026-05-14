@@ -57,6 +57,16 @@
 # keybind = 'ctrl+a>n=new_window'
 # keybind = 'ctrl+a>t=new_tab'
 
+
+# the following works in "pure" ghostty — not with tmux/tmuxp
+keybind = ctrl+shift+h=goto_split:right
+keybind = ctrl+shift+l=goto_split:right
+
+# to navigate panes
+# use ctrl+a NOTE: a little icon will appear bottom centre of screen
+# ctrl+a <- left pane
+# ctrl+a --> right pane
+
 window-height = 48
 window-width = 186
 
@@ -90,3 +100,10 @@ title-report = false
 
 # from https://ghostty.org/docs/help/terminfo
 shell-integration-features = sudo
+
+# theme
+# Dark theme
+theme = warm-burnout-dark
+
+# Light theme
+# theme = warm-burnout-light

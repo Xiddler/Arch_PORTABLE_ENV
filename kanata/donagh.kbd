@@ -35,7 +35,7 @@ Second line of text
 (defsrc
   esc  e  t u  i    p
   caps s d g h j k l 
-  <   b   n  m
+  <   v b   n  m
 )
 
 (defvar
@@ -59,7 +59,7 @@ Second line of text
 (deflayer base
     @capsesc  _ _ _  _   _ 
     @escctrl _ _ _ _ _ _ _
-    @altnew  _ _ _
+    @altnew  _ _ _ _
 )
 
 ;; in the following layer:
@@ -72,14 +72,24 @@ Second line of text
 (deflayer donsie
     _   =  `  S--   S-1    +
     _  C-6 del S-2 left down up right
-    _  bspc  S-` A-x
+    _  C-S-v bspc  S-` A-x
 )
 
+;; NOTES
+;; what does C-6 do / mean? It toggles file/buffer if there are more than one open (I think)
+
+  ;; Actions
+  ;; esc  =  ` _  !  +
+  ;; caps tf del @ L D U R 
+  ;; <  psc bspc  ~  A-x
+
+  ;; tf toggle file
+  ;; psc paste system clipboard (much easier than Ctrl Shift V)
 
 ;;   (defsrc
   ;; esc  e  t u  i    p
   ;; caps s d g h j k l 
-  ;; <   b  n  m
+  ;; <  v b  n  m
  ;;  )
 
 

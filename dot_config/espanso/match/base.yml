@@ -163,7 +163,10 @@ matches:
   - trigger: " cant" 
     replace: " can't"
 
-  - trigger: "taht" 
+  - trigger: "taht " 
+    replace: "that "
+
+  - trigger: "tath " 
     replace: "that "
 
   - trigger: "wiht " 
@@ -175,6 +178,25 @@ matches:
 
   - regex: "tdr\\b" 
     replace: "TL;DR" 
+
+  - regex: "sss"
+    replace: '{
+      
+              "url-nick":" ",
+
+              "website":" ",
+
+              "email":" ",
+
+              "password":" ",
+
+              "username":" ",
+
+              "date":" ",
+
+              "note":" ",
+
+              },'
 
   - trigger: "wnat "
     replace: "want "
@@ -202,8 +224,8 @@ matches:
   # - regex: "\\beg "
    #  replace: "e.g. "
 
-  - trigger: "uu "
-    replace: "€ "
+  - regex: "eu "
+    replace: "€"
 
   - regex: "\\bghh "
     replace: "github "
