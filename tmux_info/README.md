@@ -16,7 +16,7 @@ Removed catpuccin in LenArch and replaced with tmux styling commands
 
 
 ## INITIAL
-
+	
 
 
 mydaily6tabsessions.yaml is the hand-written yaml config file

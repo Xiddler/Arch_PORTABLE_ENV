@@ -1,3 +1,4 @@
+#  LenManjaro .zshrc file
 #  For use of tramp on doom emacs on Windows
 # [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 # source ~/.zshrc
@@ -403,8 +404,8 @@ bindkey 'xc' clear-screen
 bindkey "jl" clear-screen
 
 # binding a shortcut to a hardcoded string ; `jl` will now cd $HOME without needing to press <Enter> — for the win!
-bindkey -s "j'" 'cd ^M'
-bindkey -s 'j;' 'cd - ^M'
+bindkey -s "j;" 'cd ^M' # cd ~ without pressint Enter; cd to $HOME
+bindkey -s "j'" 'cd - ^M' # cd - without pressing Enter; cd to previous directory
 
 # / for search shell history
 # causes problems when entering / for filepaths

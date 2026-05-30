@@ -33,7 +33,7 @@ Second line of text
 )
 
 (defsrc
-  esc  e  t u  i    p
+  esc  e  t u   i   p
   caps s d g h j k l 
   <   v b   n  m
 )

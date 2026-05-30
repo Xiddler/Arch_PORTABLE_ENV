@@ -151,6 +151,9 @@ matches:
   - trigger: "@@z"
     replace: "donaghmcc@zohomail.eu"
 
+  - trigger: "@@m "
+    replace: "xzmanno@gmail.com "
+
   - trigger: "dont " 
     replace: "don't "
 
@@ -163,23 +166,37 @@ matches:
   - trigger: " cant" 
     replace: " can't"
 
-  - trigger: "taht " 
+  - regex: "waht "
+    replace: "what "
+
+  # multiple triggers
+  - triggers: 
+      - "taht " 
+      - "tath"
     replace: "that "
 
-  - trigger: "tath " 
-    replace: "that "
+  - triggers: 
+      - "taht." 
+      - "tath."
+    replace: "that."
+
+  - triggers:
+      - "taht_"
+      - "tath_"
+    replace: "that_"
+
 
   - trigger: "wiht " 
     replace: "with "
   
   - regex: "\\btl " 
     replace: "~" 
-    # also kanata key + n --> ~ 
+    # also kanata key + n = (left \) + n --> ~ 
 
   - regex: "tdr\\b" 
     replace: "TL;DR" 
 
-  - regex: "sss"
+  - regex: "zzz"
     replace: '{
       
               "url-nick":" ",
@@ -224,7 +241,7 @@ matches:
   # - regex: "\\beg "
    #  replace: "e.g. "
 
-  - regex: "eu "
+  - regex: "\\beu "
     replace: "€"
 
   - regex: "\\bghh "
@@ -235,6 +252,15 @@ matches:
 
   - trigger: "aslo "
     replace: "also "
+
+  - trigger: "zrp "
+    replace: "-#-RPI> "
+
+  - trigger: "rpz "
+    replace: "-#-RPI> "
+
+  - trigger: "rpi "
+    replace: "RPi "
 
 # END DONAGHS
 

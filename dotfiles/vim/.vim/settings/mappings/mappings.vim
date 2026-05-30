@@ -322,9 +322,10 @@ inoremap i<space> I<space>
 " inoremap wont won't
 " inoremap cant can't
 " but significant also 'corrects' to significan't; how to avoid this? try: ab cant can't in mappings.vim — see below; it fixes it;
-inoremap waht what
+" inoremap waht what
 inoremap hte the
 inoremap teh the
+
 
 
 

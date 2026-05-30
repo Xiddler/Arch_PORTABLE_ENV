@@ -49,10 +49,10 @@
 
 ;; clean aesthetically-pleasing mode line (status) bar. 2026-05-28 
 ;; failed when I M-x eval-buffer
-(use-package doom-modeline
-  :ensure t
-  :config
-  (doom-modeline-mode 1))  
+;; (use-package doom-modeline
+  ;; :ensure t
+  ;; :config
+  ;; (doom-modeline-mode 1))  
 
 
 ;; end packages
@@ -289,8 +289,7 @@
 
 (when (member "Roboto Mono" (font-family-list))
   ;;(set-face-attribute 'default nil :font "Roboto Mono" :height 120)
-  ;; (set-face-attribute 'default nil :font "Roboto Mono" :height 135)
-  (set-face-attribute 'default nil :font "Roboto Mono" :height 175)
+  (set-face-attribute 'default nil :font "Roboto Mono" :height 135)
   (set-face-attribute 'fixed-pitch nil :family "Roboto Mono"))
 
 
@@ -507,7 +506,7 @@
    '("3613617b9953c22fe46ef2b593a2e5bc79ef3cc88770602e7e569bbd71de113b"
      default))
  '(package-selected-packages
-   '(corfu dired-subtree doom-modeline doom-themes evil-escape ivy magit
+   '(corfu dired-subtree doom-modeline doom-themes evil-escape ivy
 	   marginalia markdown-mode orderless org-bullets
 	   org-superstar treemacs vertico which-key)))
 (custom-set-faces
