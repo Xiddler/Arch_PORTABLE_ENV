@@ -82,6 +82,7 @@
 ;; see https://github.com/syl20bnr/evil-escape
 ;; (evil-escape-mode 1)
 
+
 ;; 
 ;; M-x package-install key-chord [ on 2025-12-03 ]
 (use-package key-chord
@@ -153,6 +154,11 @@
 (setq which-key-popup-type 'minibuffer)
 
 ;; end which-key
+
+;; TRAMP
+(use-package tramp
+  :ensure t)
+
 ;; ----------------------------------------------------------------------------------------------
 
 

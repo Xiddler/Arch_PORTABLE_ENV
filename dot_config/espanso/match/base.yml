@@ -127,10 +127,10 @@ matches:
   - trigger: "ovv" 
     replace: "Overview "
 
-  - trigger: "apz" 
+  - trigger: "apz " 
     replace: "Manj%> "
 
-  - trigger: "zp" 
+  - trigger: "zp " 
     replace: "-%> "
 
   - trigger: "wb" 
@@ -231,7 +231,7 @@ matches:
   - regex: "apx" 
     replace: "approximately" 
 
-  - regex: "rsp" 
+  - regex: "rsb" 
     replace: "responsibility" 
   
 
@@ -261,6 +261,23 @@ matches:
 
   - trigger: "rpi "
     replace: "RPi "
+
+  - trigger: "BUt "
+    replace: "But "
+
+    
+  - trigger: "THat "
+    replace: "That "
+
+  - trigger: "aobut "
+    replace: "about "
+
+  - trigger: "083"
+    replace: "0830860240"
+
+  - trigger: "THe "
+    replace: "The "
+
 
 # END DONAGHS
 
