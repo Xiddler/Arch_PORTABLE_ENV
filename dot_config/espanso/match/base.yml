@@ -48,8 +48,8 @@ matches:
 
 
   # typo corrections
-  - regex: "\\bi " 
-    replace: "I "
+  - regex: " \\bi " 
+    replace: " I "
 
   - trigger: "ohter" 
     replace: "other "
@@ -133,7 +133,10 @@ matches:
   - trigger: "zp " 
     replace: "-%> "
 
-  - trigger: "wb" 
+  # - trigger: "wb" 
+    # replace: "webrefs "
+
+  - regex: "\\bwb" 
     replace: "webrefs "
 
   - trigger: "@@h" 
@@ -250,8 +253,8 @@ matches:
   - regex: " ot "
     replace: " to "
 
-  - trigger: "aslo "
-    replace: "also "
+  - trigger: " aslo "
+    replace: " also "
 
   - trigger: "zrp "
     replace: "-#-RPI> "
@@ -277,6 +280,42 @@ matches:
 
   - trigger: "THe "
     replace: "The "
+
+
+  # IRISH 
+  # These fail — not sure why
+#  - trigger: "az"
+#    replace: "á"
+
+
+#  - trigger: "Az"
+#    replace: "Á"
+#
+#  - trigger: "ez"
+#    replace: "é"
+#
+#  - trigger: "Ez"
+#    replace: "É"
+#
+#  - trigger: "oz"
+#    replace: "ó"
+#
+#  - trigger: "Oz"
+#    replace: "Ó"
+# 
+#  - trigger: "iz"
+#    replace: "í"
+#
+#  - trigger: "Iz"
+#    replace: "Í"
+#
+#  - trigger: "uz"
+#    replace: "ú"
+#
+#  - trigger: "Uz"
+#    replace: "Ú"
+
+  #- trigger: "also 
 
 
 # END DONAGHS

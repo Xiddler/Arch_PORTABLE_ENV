@@ -422,6 +422,7 @@ hme() { cd $HOME }
 # from Leonovo Arch
 # ssht() { ssh -i /home/donagh/.ssh/id_to_toshiba donagh@donagh-satellitep50c.home }
 ssht() { ssh -i /home/donagh/.ssh/id_ed_Toshiba donagh@192.168.1.86 }
+# sshm() { /usr/sbin/ssh -i ~/.ssh/id_ed_Toshiba donagh@192.168.1.86 -t "$@" "tmuxp load -y ~/.tmuxp/my-6-daily-tabs.yaml || tmux new" }
 # ssh into the RPi
 # sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
 # sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }
@@ -506,6 +507,8 @@ lg() { lazygit }
 # alias -g ls="eza"
 # eza: Option --time (-t) has no "--color=always" setting (choices: modified, changed, accessed, created)
 lss() { eza }
+rr() { ls -lt  **/*(.om[1,20]) } # print most recently accessed files on this dir
+
 
 # List directories / files. Code: f file, d directory, l symlink, i item (file/directory),  n non-.
 # Duplicate options are given where zsh is available / known to me

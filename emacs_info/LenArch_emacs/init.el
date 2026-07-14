@@ -156,8 +156,9 @@
 ;; end which-key
 
 ;; TRAMP
-(use-package tramp
-  :ensure t)
+;; (use-package tramp
+  ;; :ensure t)
+;; 2026-06-19 -- couldn't get it working
 
 ;; ----------------------------------------------------------------------------------------------
 
@@ -192,7 +193,55 @@
 ;; end styling & themes
 ;; ----------------------------------------------------------------------------------------------
 
+;; ***********************************************************************************************
+;; modusregel -- fancy modeline package from https://codeberg.org/jjba23/modusregel
+;; 2026-07-03
 
+;;(use-package modusregel
+;;   :ensure (:host codeberg :repo "jjba23/modusregel" :branch "trunk")
+;;   :demand t)
+
+;; window only
+;;(setq mode-line-format modusregel-format)
+;; global
+;;(setq-default mode-line-format modusregel-format)
+
+;; Simple example
+;;(defun my-set-custom-modeline ()
+;;  (setq mode-line-format modusregel-format))
+
+;; Or more advanced control
+;; (defun my-set-custom-modeline ()
+  ;; "Customize mode-line format using modusregel."
+;;  (setq mode-line-format (list
+;;                          modusregel-leading-str
+;;                          modusregel-remote-expr
+;;                          modusregel-buffer-name-expr
+;;                          modusregel-buffer-modified-str
+;;                          modusregel-buffer-read-only-str
+;;                          modusregel-spacer-str
+
+                          ;; Uncomment if nyan-mode is enabled above
+                          ;; modusregel-nyan-expr
+
+;;                          modusregel-spacer-str
+;;                          modusregel-line-number-str
+;;                          modusregel-column-number-str
+;;                          modusregel-spacer-str
+;;                          modusregel-buffer-position-str
+;;                          modusregel-spacer-str
+;;                          modusregel-vc-expr
+;;                          modusregel-major-mode-expr
+;;                          modusregel-eglot-expr
+;;                          modusregel-spacer-str
+;;                          modusregel-flymake-expr
+;;                          (ignore-errors keycast-mode-line))))
+
+;; Important hook
+;;(add-hook 'after-change-major-mode-hook #'my-set-custom-modeline)
+
+
+;; ----------------------------------------------------------------------------------------------
 ;; ***********************************************************************************************
 ;; keybindings
 
