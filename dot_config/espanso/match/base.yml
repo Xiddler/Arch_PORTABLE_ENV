@@ -170,7 +170,10 @@ matches:
     replace: " can't"
 
   - regex: "waht "
-    replace: "what "
+    replace: " what "
+
+  - regex: "Waht "
+    replace: "What "
 
   # multiple triggers
   - triggers: 
@@ -188,6 +191,8 @@ matches:
       - "tath_"
     replace: "that_"
 
+  - trigger: "fo " 
+    replace: "of "
 
   - trigger: "wiht " 
     replace: "with "
@@ -244,8 +249,10 @@ matches:
   # - regex: "\\beg "
    #  replace: "e.g. "
 
-  - regex: "\\beu "
-    replace: "€"
+    # the next causes issues; it pastes in the contents of some clipboard or other; using vim mappings instead; 
+    # can also use KDE Clipboard Contents where I have € starred
+#  - trigger: "eu"
+#    replace: "€"
 
   - regex: "\\bghh "
     replace: "github "
@@ -281,6 +288,8 @@ matches:
   - trigger: "THe "
     replace: "The "
 
+  - trigger: "qk"
+    replace: "~/DONAGHS/personal/journal/2026/0"
 
   # IRISH 
   # These fail — not sure why

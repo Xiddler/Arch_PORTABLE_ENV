@@ -134,7 +134,8 @@ jargon() { vim /home/donagh/REPOS/WORDS/MY_WORDS/modern_jargon.md } # tech jargo
 terms() { vim ~/DONAGHS/personal/SELF_DEVELOPMENT/mental_stuff/terms.md } # mainly psychology terms
 hard() { vim $HOME/REPOS/WORDS/MY_WORDS/hard_words.txt }
 articles() { cd $HOME/REPOS/books/Articles/Articles_downloaded } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
-books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
+# books() { cd $HOME/REPOS/books/ } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
+books() { cd /mnt/books/ && ls  } # use autokey instead so as to be able to tabe in vim. Added 2021-10-25.
 b_d() { cd $HOME/REPOS/books/ } # a collection of abbrs. for books; bd is books_directory; br is books_reading directory for notes; b2r is books to read;
 b_r() { cd $HOME/REPOS/books/0READING/0Reading_notes/ && ls } # b is prefix for books so br = books reading, b2r = books to read, bd = books directory
 b_2r() {vim ~/REPOS/books/0READING/2Read.md } # books to read; see b_r and b_d above
@@ -420,9 +421,12 @@ hme() { cd $HOME }
 
 # ssht() { ssh -i /home/donagh/.ssh/id_rsa_toshiba donagh@192.168.1.86 } 
 # from Leonovo Arch
+#
 # ssht() { ssh -i /home/donagh/.ssh/id_to_toshiba donagh@donagh-satellitep50c.home }
 ssht() { ssh -i /home/donagh/.ssh/id_ed_Toshiba donagh@192.168.1.86 }
-# sshm() { /usr/sbin/ssh -i ~/.ssh/id_ed_Toshiba donagh@192.168.1.86 -t "$@" "tmuxp load -y ~/.tmuxp/my-6-daily-tabs.yaml || tmux new" }
+# mosh see zim-wiki NOTE: select and copy to system clipboard doesn't seem to work when using mosh and tmux
+sshm() { mosh --ssh="/usr/sbin/ssh -i /home/donagh/.ssh/id_ed_Toshiba" donagh@192.168.1.86 -- tmuxp load -y /home/donagh/.tmuxp/my-6-daily-tabs.yaml }
+
 # ssh into the RPi
 # sshrpi() { ssh -i ~/.ssh/ip_rsa_rpi donagh@192.168.1.24 }
 # sshrpi() { ssh -i ~/.ssh/id_rpi_2 donagh@192.168.1.24 }

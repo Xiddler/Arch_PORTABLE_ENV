@@ -164,3 +164,7 @@ Thu Jan  1 01:00:01 AM IST 1970
 
 OK, not right but probably possible
 
+# date with seconds showing
+
+echo "$(date --iso-8601=seconds)"
+

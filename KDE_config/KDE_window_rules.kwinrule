@@ -62,6 +62,13 @@ shortcutrule=5
 wmclass=okular
 wmclassmatch=3
 
+[rio]
+Description=rio
+shortcut=Alt+R
+shortcutrule=5
+wmclass=rio
+wmclassmatch=3
+
 [yakuake]
 Description=yakuake
 shortcut=Alt+Y

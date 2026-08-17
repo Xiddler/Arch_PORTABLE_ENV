@@ -1,5 +1,6 @@
 ;; based on https://github.com/jtroo/kanata/
-;; 2025-11-15
+;; 2026-07-26; 2026-03-25; 2025-11-15
+
 
 #|
 This text between the two pipe+octothorpe sequences is a multi-line comment.
@@ -23,7 +24,11 @@ Second line of text
 
 ;; Notes
 ;; S-1 for !
+;; S-` for ~ 
 ;; S-- for _ 
+
+;; 2026-07-26 
+;; Added C-S-c to allow copying (after highlighting wiht the Shift-Mouse-Select motion) because I'm using mosh instead of direct ssht)
 
 (defcfg
       process-unmapped-keys yes
@@ -31,9 +36,9 @@ Second line of text
 )
 
 (defsrc
-  esc  e  t u  i    p
-  caps d h j k l 
-  <   b   m
+  esc  e  t u   i   p
+  caps s d g h j k l 
+  < x c v b   n  m
 )
 
 (defvar
@@ -56,8 +61,8 @@ Second line of text
 
 (deflayer base
     @capsesc  _ _ _  _   _ 
-    @escctrl _ _ _ _ _
-    @altnew   _ _
+    @escctrl _ _ _ _ _ _ _
+    @altnew _ _ _ _ _ _
 )
 
 ;; in the following layer:
@@ -69,9 +74,27 @@ Second line of text
 
 (deflayer donsie
     _   =  `  S--   S-1    +
-    _  del left down up right
-    _  bspc   A-x
+    _  C-6 del S-2 left down up right
+    _  S-6 C-S-c C-S-v bspc  S-` A-x
 )
+
+;; NOTES
+;; what does C-6 do / mean? It toggles file/buffer if there are more than one open (I think)
+
+  ;; Actions
+  ;; esc  =  ` _  !  +
+  ;; caps tf del @ L D U R 
+  ;; < ^ psc bspc  ~  A-x
+
+  ;; tf toggle file
+  ;; psc paste system clipboard (much easier than Ctrl Shift V)
+
+;;   (defsrc
+  ;; esc  e  t u  i    p
+  ;; caps s d g h j k l 
+  ;; < x v b  n  m
+ ;;  )
+
 
 
 

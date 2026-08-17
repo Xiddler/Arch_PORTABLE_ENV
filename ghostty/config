@@ -75,12 +75,14 @@ background = 282c34
 # background = 00ffff
 foreground = ffffff
 # 95% opaque
-background-opacity = 0.95   
+# background-opacity = 0.95   
+background-opacity = 1.00
 # frosted glass effect
-background-blur = 10        
+# background-blur = 10        
 
 gtk-single-instance = desktop
 
+# from https://ghostty.org/docs/help/terminfo
 shell-integration = detect
 shell-integration-features = cursor,sudo,title
 
@@ -93,13 +95,11 @@ clipboard-write = allow
  # warns about dangerous pastes (e.g., commands with newlines)
 clipboard-paste-protection = true 
  # auto-copy selection
-# copy-on-select = true            
+copy-on-select = true
 
 # prevent title query attacks
 title-report = false
 
-# from https://ghostty.org/docs/help/terminfo
-shell-integration-features = sudo
 
 # theme
 # Dark theme
