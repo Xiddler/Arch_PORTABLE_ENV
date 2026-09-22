@@ -1,15 +1,3 @@
-[Application settings for Clock]
-Description=Application settings for Clock
-Enabled=false
-above=true
-aboverule=3
-clientmachine=localhost
-noborder=true
-noborderrule=3
-wmclass=oclock Clock
-wmclasscomplete=true
-wmclassmatch=1
-
 [System settings]
 Description=System settings
 shortcut=Alt+S
@@ -23,6 +11,13 @@ shortcut=Alt+E
 shortcutrule=5
 wmclass=emacs
 wmclasscomplete=true
+wmclassmatch=3
+
+[fbreader]
+Description=fbreader
+shortcut=Alt+M
+shortcutrule=5
+wmclass=FBReader
 wmclassmatch=3
 
 [firefox]
@@ -47,34 +42,11 @@ wmclass=kcalc
 wmclasscomplete=true
 wmclassmatch=3
 
-[konsole]
-Description=konsole
-Enabled=false
-shortcut=Alt+C
-shortcutrule=5
-wmclass=konsole
-wmclassmatch=3
-
 [okular]
 Description=okular
 shortcut=Alt+V
 shortcutrule=5
 wmclass=okular
-wmclassmatch=3
-
-[rio]
-Description=rio
-shortcut=Alt+R
-shortcutrule=5
-wmclass=rio
-wmclassmatch=3
-
-[yakuake]
-Description=yakuake
-shortcut=Alt+Y
-shortcutrule=5
-wmclass=yakuake
-wmclasscomplete=true
 wmclassmatch=3
 
 [zim]

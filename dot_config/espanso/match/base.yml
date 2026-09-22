@@ -51,6 +51,9 @@ matches:
   - regex: " \\bi " 
     replace: " I "
 
+  - regex: "DG "
+    replace: "° "
+
   - trigger: "ohter" 
     replace: "other "
 
@@ -68,6 +71,9 @@ matches:
  
   - trigger: "htis "
     replace: "this "
+
+  - trigger: "jsut "
+    replace: "just "
 
     # for when I use a basic vim with -u vimrc file
  ## - trigger: "lh "
@@ -170,10 +176,14 @@ matches:
     replace: " can't"
 
   - regex: "waht "
-    replace: " what "
+    replace: "what "
 
   - regex: "Waht "
     replace: "What "
+
+  # for godict utility ~/REPOS/2programming/python/1python_projects/cli_python/main_cli.py
+  - regex: "nn "
+    replace: "-1"
 
   # multiple triggers
   - triggers: 
@@ -191,8 +201,8 @@ matches:
       - "tath_"
     replace: "that_"
 
-  - trigger: "fo " 
-    replace: "of "
+  - trigger: " fo " 
+    replace: " of "
 
   - trigger: "wiht " 
     replace: "with "
@@ -233,14 +243,41 @@ matches:
   - regex: "\\b192\\b" 
     replace: "192.168.1." 
 
-  - regex: "sff" 
+  - trigger: "sff" 
     replace: "significantly" 
 
-  - regex: "apx" 
+  - trigger: "sgf" 
+    replace: "significantly" 
+
+  - trigger: "apx" 
     replace: "approximately" 
 
-  - regex: "rsb" 
+  - trigger: "apr" 
+    replace: "appropriately" 
+
+  - trigger: "rsb" 
     replace: "responsibility" 
+
+  - trigger: "rsp" 
+    replace: "responsibility" 
+    
+  - trigger: "cps" 
+    replace: "comprehension" 
+
+  - trigger: "Cps" 
+    replace: "Comprehension" 
+
+  - trigger: "nws"
+    replace: "notwithstanding "
+
+ # - trigger: "comp" 
+ #   replace: "comprehension" 
+
+  - trigger: "cpd" 
+    replace: "comprehend" 
+
+  - trigger: "psb" 
+    replace: "possibility" 
   
 
   #- regex: "\\bie\\b"

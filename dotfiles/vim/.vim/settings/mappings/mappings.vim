@@ -121,7 +121,7 @@ noremap <leader>f :Ranger<cr>
 
 " combine :ls and :bn to open / navigate buffers
 " https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim
-nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
+" nnoremap <leader>k :set nomore<Bar>:ls<Bar>:set more<CR>:b<Space>
 
 "<leader>p to paste from system clipboard
 nnoremap <leader>p :set paste<cr> "+p :set nopaste<cr>
@@ -134,6 +134,8 @@ nnoremap <leader>r  :exe 'set nu!' &nu ? 'rnu!' : '' <cr>
 nnoremap <C-n> :exe 'set nu!' &nu ? 'rnu!' : ''
 
 "<leader>s to save file
+nnoremap <leader>k :w<cr> " more ergonomic
+nnoremap <leader>kh :wq<cr> " more ergonomic; kh was too easily typed by accident
 nnoremap <leader>s :w<cr>
 inoremap <leader>s <C-c>:w<cr>
 

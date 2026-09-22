@@ -195,7 +195,7 @@ MYVIMRC=$HOME/.vimrc
 # setopt PROMPT_PERCENT 
 
 # Increase scrolling history. This is __NOT__ the number of items listed from a command. That'd be a Terminator setting.
-set -g history-limit 9000 #
+set -g history-limit 9000 
 
 # refer to https://betterdev.blog/minimal-safe-bash-script-template/
 # set -Eeou pipefail
@@ -695,6 +695,7 @@ zstyle ':completion:*:' menu select # tab opens cmp menu
 #########################################################
 
 # Use Ctrl G to toggle between local and global history
+# https://github.com/jimhester/per-directory-history
 source $HOME/Arch_PORTABLE_ENV/zsh_info/per-directory-history/per-directory-history.zsh
 # ->% echo $PER_DIRECTORY_HISTORY_TOGGLE --▷ ^G
 #
@@ -732,3 +733,11 @@ source $HOME/Arch_PORTABLE_ENV/zsh_info/zsh-syntax-highlighting/zsh-syntax-highl
 
 
 
+
+# pnpm
+export PNPM_HOME="/home/donagh/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
