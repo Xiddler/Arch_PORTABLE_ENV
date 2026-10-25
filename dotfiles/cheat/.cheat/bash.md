@@ -137,3 +137,10 @@ find "$filename" -prune -printf '%m\n'
 # date - see -> % cheat date 
  print yesterday's date (for my jounal)
 date  --date="yesterday" +"%Y-%m-%d"
+
+# check if shell is interactive
+Manj%> if [[ $- == *i* ]]; then
+    echo "Interactive shell"
+fi
+_output_
+Interactive shell

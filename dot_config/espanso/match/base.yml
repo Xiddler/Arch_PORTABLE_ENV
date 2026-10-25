@@ -118,7 +118,7 @@ matches:
       - name: fulldate
         type: date
         params:
-          format: "%Y-%m-%d:%H-%M "
+          format: "%Y-%m-%d_%H:%M "
 
 
   # Print the current time
@@ -182,7 +182,7 @@ matches:
     replace: "What "
 
   # for godict utility ~/REPOS/2programming/python/1python_projects/cli_python/main_cli.py
-  - regex: "nn "
+  - regex: "xx"
     replace: "-1"
 
   # multiple triggers
@@ -258,10 +258,10 @@ matches:
   - trigger: "rsb" 
     replace: "responsibility" 
 
-  - trigger: "rsp" 
+  - trigger: "rsp " 
     replace: "responsibility" 
     
-  - trigger: "cps" 
+  - trigger: "cps " 
     replace: "comprehension" 
 
   - trigger: "Cps" 
@@ -319,7 +319,7 @@ matches:
   - trigger: "aobut "
     replace: "about "
 
-  - trigger: "083"
+  - trigger: "083 "
     replace: "0830860240"
 
   - trigger: "THe "
@@ -327,6 +327,10 @@ matches:
 
   - trigger: "qk"
     replace: "~/DONAGHS/personal/journal/2026/0"
+
+  - trigger: "gbp"
+    replace: "£"
+
 
   # IRISH 
   # These fail — not sure why

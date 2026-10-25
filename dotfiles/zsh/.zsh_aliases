@@ -312,6 +312,9 @@ gsc() { fd $1 ~/.cheat }                # find file in cheats i.e. if $1 in ~/.c
 kl() { cd $HOME && echo " " }
 
 #}}}
+#{{{ COLOR UTILITY
+color() kdialog --getcolor
+#}}}
 #{{{ MARKDOWN 
 # the following shortcut alias means that pressing enter after just entering  
 # a file name with .md extension will automagically open it with vim. Hurrah!

@@ -30,6 +30,9 @@
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
 # font-family = Iosevka
+# PROGRAMMING 
+# Kassiopea-Regular.ttf
+# font-family = Kassiopea
 # window-padding-x = 2
 #
 # # Spacing around the equals sign does not matter.

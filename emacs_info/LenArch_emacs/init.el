@@ -164,6 +164,10 @@
 ;; (use-package tramp
   ;; :ensure t)
 ;; 2026-06-19 -- couldn't get it working
+;; try again 2026-10-24 
+(setq tramp-default-method "ssh"
+      tramp-backup-directory-alist backup-directory-alist
+      tramp-ssh-controlmaster-options "ssh")
 
 ;; ----------------------------------------------------------------------------------------------
 
@@ -175,6 +179,7 @@
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
+
 ;; (load-theme 'leuven-dark t)
 
 (use-package doom-themes
@@ -182,11 +187,19 @@
 )
 ;; (require' doom-themes)    ;; Make sure doom-themes are installed
 ;; (load-theme 'doom-nord t) ;; Load the doom-nord theme
-(load-theme 'tsdh-dark t) ;; Load the tsdh-dark theme
+;; (load-theme 'tsdh-dark t) ;; Load the tsdh-dark theme
+(load-theme 'doom-bluloco-dark t) ;; 2026-10-24 
 
 ;; background colour ; to check the ~/.emacs.d/init.el file is being read
 ;; (add-to-list 'default-frame-alist '(foreground-color . "#E0DFDB")) ;; whiteish
 ;; (add-to-list 'default-frame-alist '(background-color . "#102372")) ;; blue
+
+;; By default, Emacs thinks a sentence is a full-stop followed by 2 spaces. Let’s make it full-stop and 1 space. 2026-10-24 
+(setq sentence-end-double-space nil)
+
+
+
+
 
 ;; graphical bars
 ;; 1 enables; -1 disable
@@ -335,8 +348,13 @@
 
 ;; keybinding C-c t
 (require 'treemacs)
+(treemacs t)
 ;; toggle treemacs --- sidebuffer showing files
+;; (use-package treemacs 
+      ;; :ensure t)
 (keymap-global-set "C-c t" 'treemacs)
+;; (keymap-global-set "SPC d" 'treemacs)
+
 
 ;; end treemacs
 ;; ----------------------------------------------------------------------------------------------
@@ -564,7 +582,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("3613617b9953c22fe46ef2b593a2e5bc79ef3cc88770602e7e569bbd71de113b"
+   '("22a0d47fe2e6159e2f15449fcb90bbf2fe1940b185ff143995cc604ead1ea171"
+     "3d9df5511048d0815b1ccc2204cc739117c1a458be92fb26c03451149a1b1c11"
+     "3613617b9953c22fe46ef2b593a2e5bc79ef3cc88770602e7e569bbd71de113b"
      default))
  '(package-selected-packages
    '(corfu dired-subtree doom-modeline doom-themes evil-escape ivy magit
